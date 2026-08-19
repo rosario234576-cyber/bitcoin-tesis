@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Criptomoneda | Compra y venta de Bitcoin</title>
+  <meta name="description" content="Interfaz referencial para comprar, vender, seguir y aprender sobre Bitcoin en tiempo real.">
+  <link rel="icon" type="image/png" href="assets/Logo/IsoBlanco.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a class="brand" href="#home" aria-label="Bitcoin inicio">
+      <img src="assets/Logo/LogoBlanco.png" alt="Bitcoin">
+      <span>Bitcoin</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Menu principal">
+      <a href="Paginas/quienes-somos.html">Quienes somos</a>
+      <div class="nav-dropdown">
+        <button type="button">Mercado</button>
+        <div class="nav-dropdown-menu">
+          <a href="Paginas/comprar.html">Comprar</a>
+          <a href="Paginas/vender.html">Vender</a>
+        </div>
+      </div>
+      <a href="#beneficios">Beneficios</a>
+      <a href="Paginas/ayuda-faq.html">Ayuda/FAQ</a>
+      <a href="Paginas/contacto.html">Contacto</a>
+    </nav>
+
+    <div class="account-actions">
+      <a class="login-link" href="Paginas/ingresar.html">Ingresar</a>
+      <div class="account-menu">
+        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
+          <span class="account-icon"></span>
+        </button>
+        <div class="account-dropdown">
+          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+          <a href="Paginas/mi-cuenta.html">Mi cuenta</a>
+          <a href="Paginas/registro.html">Registrarme</a>
+          <a href="Paginas/ingresar.html" data-logout>Cerrar sesion</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <a href="#home">Inicio</a>
+    <a href="Paginas/quienes-somos.html">Quienes somos</a>
+    <a href="Paginas/comprar.html">Comprar</a>
+    <a href="Paginas/vender.html">Vender</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="Paginas/ayuda-faq.html">Ayuda/FAQ</a>
+    <a href="Paginas/contacto.html">Contacto</a>
+    <a href="Paginas/ingresar.html">Mi cuenta</a>
+  </nav>
+
+  <main>
+    <section class="hero section-pattern" id="home">
+      <div class="hero-copy reveal reveal-left">
+        <p class="eyebrow">Compra, venta y seguimiento de Bitcoin</p>
+        <h1>La nueva era de las finanzas digitales comienza aqui</h1>
+        <p>Opera BTC de forma rapida, simple y segura. Consulta precios, arma alertas, compra, vende y aprende desde una misma interfaz.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#operar">Empezar ahora</a>
+          <a class="button button-outline" href="#mercado">Ver mercado</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-right">
+        <div class="market-dashboard" aria-label="Resumen del mercado Bitcoin">
+          <div class="dashboard-head">
+            <div>
+              <span class="market-pair">BTC / USD</span>
+              <strong>67.450</strong>
+              <em>+2.8% hoy</em>
+            </div>
+            <img src="assets/Logo/IsoNaranja.png" alt="Bitcoin">
+          </div>
+
+          <div class="price-chart" aria-hidden="true">
+            <svg viewBox="0 0 500 220" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff8600" stop-opacity=".42"/>
+                  <stop offset="1" stop-color="#ff8600" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="chart-grid" d="M0 42H500M0 98H500M0 154H500M0 210H500"/>
+              <path class="chart-area" d="M0 196 L28 173 L52 178 L79 146 L104 164 L133 117 L158 91 L184 112 L214 76 L238 98 L270 53 L295 83 L322 65 L350 105 L380 65 L408 52 L438 20 L463 34 L500 4 L500 220 L0 220Z"/>
+              <path class="chart-line" d="M0 196 L28 173 L52 178 L79 146 L104 164 L133 117 L158 91 L184 112 L214 76 L238 98 L270 53 L295 83 L322 65 L350 105 L380 65 L408 52 L438 20 L463 34 L500 4"/>
+              <circle cx="500" cy="4" r="6"/>
+            </svg>
+          </div>
+
+          <div class="chart-periods" aria-label="Periodo del grafico">
+            <button class="active" type="button">1D</button><button type="button">1S</button><button type="button">1M</button><button type="button">1A</button><button type="button">Todo</button>
+          </div>
+
+          <div class="market-stats">
+            <div><span>Volumen 24h</span><strong>32.4B</strong><em>alto</em></div>
+            <div><span>Spread</span><strong>0.35%</strong><em>bajo</em></div>
+            <div><span>Mercado</span><strong>24/7</strong><em>activo</em></div>
+          </div>
+
+          <div class="dashboard-actions">
+            <a class="button button-primary" href="Paginas/comprar.html">Comprar BTC</a>
+            <a class="button button-outline" href="Paginas/vender.html">Vender BTC</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#operar" aria-label="Scrollear para ver mas">
+        <span>Scrollea para ver</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section class="bitcoin-marquee" aria-label="Cinta Bitcoin">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Bitcoin</span>
+          <span><img src="assets/RecursosWeb/Monedas.png" alt=""> Compra BTC</span>
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Mercado 24/7</span>
+          <span><img src="assets/RecursosWeb/Escudo.png" alt=""> Seguridad</span>
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Compra y venta</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Bitcoin</span>
+          <span><img src="assets/RecursosWeb/Monedas.png" alt=""> Compra BTC</span>
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Mercado 24/7</span>
+          <span><img src="assets/RecursosWeb/Escudo.png" alt=""> Seguridad</span>
+          <span><img src="assets/Logo/IsoNaranja.png" alt=""> Compra y venta</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trade-section" id="operar">
+      <div class="trade-copy reveal reveal-left">
+        <p class="eyebrow">Mas de 10.000 usuarios activos / Transacciones seguras</p>
+        <h2>Cambia tus dolares por criptomonedas en segundos</h2>
+        <p>Compra y vende Bitcoin con una experiencia clara para usuarios que operan todo el dia: saldo disponible, cotizacion, comision estimada y monto final antes de confirmar.</p>
+        <a class="button button-primary" href="Paginas/ingresar.html">Comenzar ahora</a>
+      </div>
+
+      <form class="trade-card reveal reveal-right" id="trade-form">
+        <div class="trade-tabs" role="tablist" aria-label="Tipo de operacion">
+          <button class="trade-tab active" type="button" data-mode="buy">Comprar</button>
+          <button class="trade-tab" type="button" data-mode="sell">Vender</button>
+        </div>
+        <label>
+          <span>Pagas</span>
+          <div class="input-row">
+            <input id="fiat-input" type="number" min="0" value="250" inputmode="decimal">
+            <select id="fiat-currency" aria-label="Moneda fiat">
+              <option value="USD">USD</option>
+              <option value="ARS">ARS</option>
+            </select>
+          </div>
+        </label>
+        <label>
+          <span>Recibis estimado</span>
+          <div class="input-row muted-row">
+            <input id="btc-output" type="text" readonly>
+            <strong>BTC</strong>
+          </div>
+        </label>
+        <div class="trade-summary">
+          <p><span>Precio BTC</span><strong id="btc-price">USD 67.450</strong></p>
+          <p><span>Comision</span><strong id="fee-output">0.80%</strong></p>
+          <p><span>Total neto</span><strong id="net-output">USD 248.00</strong></p>
+        </div>
+        <button class="button button-primary full-button" type="submit">Simular operacion</button>
+        <p class="form-note" id="trade-message" aria-live="polite">Cotizacion referencial para maqueta. Lista para conectar a una API.</p>
+      </form>
+    </section>
+
+    <section class="market-section section-pattern" id="mercado">
+      <div class="market-visual reveal reveal-left">
+        <img src="assets/RecursosWeb/IconoHome2.png" alt="Icono Bitcoin">
+      </div>
+      <div class="market-copy reveal reveal-right">
+        <p class="eyebrow">Panel pensado para traders</p>
+        <h2>Segui el precio, tus saldos y alertas sin perder velocidad</h2>
+        <p>Un tablero compacto para quienes compran y venden constantemente: variacion diaria, liquidez, historial reciente y accesos rapidos para operar.</p>
+        <div class="ticker-grid" aria-label="Indicadores de mercado">
+          <article>
+            <span>BTC/USD</span>
+            <strong>67.450</strong>
+            <em>+2.8%</em>
+          </article>
+          <article>
+            <span>Volumen 24h</span>
+            <strong>32.4B</strong>
+            <em>alto</em>
+          </article>
+          <article>
+            <span>Spread</span>
+            <strong>0.35%</strong>
+            <em>bajo</em>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section" id="beneficios">
+      <div class="section-heading reveal">
+        <h2>Explora el <span>mundo de las criptomonedas</span></h2>
+        <p>Cuatro modulos base para que la experiencia sea clara, rapida y confiable.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal" data-number="01">
+          <img src="assets/RecursosWeb/Monedas.png" alt="">
+          <h3>Compra y Venta Instantanea</h3>
+          <p>Opera con las principales monedas de forma rapida, segura y sin intermediarios.</p>
+          <strong>Disponible 24/7 con tasas actualizadas en tiempo real.</strong>
+        </article>
+        <article class="feature-card reveal" data-number="02">
+          <img src="assets/RecursosWeb/Billetera.png" alt="">
+          <h3>Billetera Digital Segura</h3>
+          <p>Guarda tus activos digitales con una wallet protegida por encriptacion avanzada.</p>
+          <strong>Control total y acceso desde cualquier dispositivo.</strong>
+        </article>
+        <article class="feature-card reveal" data-number="03">
+          <img src="assets/RecursosWeb/Escudo.png" alt="">
+          <h3>Seguimiento de Mercado</h3>
+          <p>Accede a graficos, precios en vivo y alertas personalizadas para BTC.</p>
+          <strong>Toma decisiones con datos en tiempo real.</strong>
+        </article>
+        <article class="feature-card reveal" data-number="04">
+          <img src="assets/RecursosWeb/Gorra.png" alt="">
+          <h3>Educacion Cripto</h3>
+          <p>Aprende desde cero sobre blockchain, Bitcoin y seguridad operativa.</p>
+          <strong>Formate para invertir con conocimiento y confianza.</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section" id="ayuda">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Ayuda / FAQ</p>
+        <h2>Preguntas rapidas antes de operar</h2>
+      </div>
+      <div class="faq-list reveal">
+        <button class="faq-item" type="button">
+          <span>Como compro Bitcoin?</span>
+          <p>Elegis comprar, ingresas el monto, revisas la cotizacion y confirmas la operacion desde tu cuenta.</p>
+        </button>
+        <button class="faq-item" type="button">
+          <span>La cotizacion es en tiempo real?</span>
+          <p>Esta maqueta usa valores referenciales. La interfaz queda preparada para conectar una API de mercado.</p>
+        </button>
+        <button class="faq-item" type="button">
+          <span>Puedo vender y retirar fondos?</span>
+          <p>Si. El flujo contempla venta de BTC, saldo disponible y retiro hacia una cuenta verificada.</p>
+        </button>
+      </div>
+      <div class="faq-page-link reveal">
+        <a class="button button-primary" href="Paginas/ayuda-faq.html">Ver preguntas frecuentes</a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="contact-card reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2>Listo para operar Bitcoin con una interfaz clara</h2>
+        <p>Deja este bloque para WhatsApp, mail, soporte o formulario. La estructura ya esta preparada para crecer con datos reales.</p>
+        <a class="button button-primary" href="Paginas/contacto.html">Contactar</a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="mobile-dock" aria-label="Navegacion rapida">
+    <a class="active" href="#home"><span>⌂</span>Inicio</a>
+    <a href="#mercado"><span>▥</span>Mercado</a>
+    <a class="dock-main" href="#operar"><img src="assets/Logo/IsoBlanco.png" alt="Operar"></a>
+    <a href="Paginas/mi-cuenta.html"><span>▣</span>Wallet</a>
+    <a href="Paginas/ingresar.html"><span>○</span>Perfil</a>
+  </nav>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

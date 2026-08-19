@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vender Bitcoin | Bitcoin Tesis</title>
+  <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio"><img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin"><span>Bitcoin</span></a>
+    <nav class="desktop-nav" aria-label="Menu principal">
+      <a href="quienes-somos.html">Quienes somos</a>
+      <div class="nav-dropdown"><button type="button">Mercado</button><div class="nav-dropdown-menu"><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a></div></div>
+      <a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="account-actions">
+      <a class="login-link" href="ingresar.html">Ingresar</a>
+      <div class="account-menu">
+        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false"><span class="account-icon"></span></button>
+        <div class="account-dropdown">
+          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+          <a href="mi-cuenta.html">Mi cuenta</a>
+          <a href="registro.html">Registrarme</a>
+          <a href="ingresar.html" data-logout>Cerrar sesion</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <a href="../index.html">Inicio</a><a href="quienes-somos.html">Quienes somos</a><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a><a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a><a href="ingresar.html">Mi cuenta</a>
+  </nav>
+
+  <main class="market-page">
+    <section class="market-action-hero section-pattern">
+      <div class="market-action-copy reveal reveal-left">
+        <p class="eyebrow">Mercado / Vender</p>
+        <h1>Vender Bitcoin mirando liquidez, precio y momento</h1>
+        <p>Antes de vender, revisa tendencia, saldo disponible, precio de salida y comisiones. Vender bien tambien es proteger tu resultado.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#simulador-venta">Simular venta</a><a class="button button-outline" href="comprar.html">Ir a comprar</a></div>
+      </div>
+      <div class="market-chart-card reveal reveal-right">
+        <div class="chart-head"><span>BTC/USD</span><strong>67.450</strong><em>-0.9%</em></div>
+        <canvas class="market-canvas" data-chart="sell" aria-label="Grafico de mercado BTC"></canvas>
+      </div>
+    </section>
+
+    <section class="market-guide">
+      <div class="section-heading reveal"><p class="eyebrow">Como vender</p><h2>Vende con un resumen claro antes de confirmar</h2></div>
+      <div class="market-guide-grid">
+        <article class="market-guide-card reveal" data-number="01"><h3>Saldo BTC</h3><p>Verifica cuanto BTC tenes disponible y si hay fondos bloqueados, pendientes o en confirmacion.</p></article>
+        <article class="market-guide-card reveal" data-number="02"><h3>Precio de salida</h3><p>Mira si el precio esta subiendo, bajando o lateralizando. Evita vender sin mirar la direccion reciente.</p></article>
+        <article class="market-guide-card reveal" data-number="03"><h3>Total a recibir</h3><p>Antes de confirmar, revisa monto bruto, comision, moneda final y tiempo estimado de acreditacion.</p></article>
+      </div>
+    </section>
+
+    <section class="market-simulator section-pattern" id="simulador-venta">
+      <div class="process-copy reveal reveal-left"><p class="eyebrow">Simulador</p><h2>Flujo recomendado para vender</h2><p>Elegis BTC a vender, revisas precio y confirmas solo con saldo y resumen validados.</p></div>
+      <div class="process-panel reveal reveal-right">
+        <article><span>01</span><div><h3>Elegi monto BTC</h3><p>Define cuanto queres vender desde tu saldo disponible.</p></div></article>
+        <article><span>02</span><div><h3>Revisa cotizacion</h3><p>Compara precio, spread y comision estimada.</p></div></article>
+        <article><span>03</span><div><h3>Retira o guarda saldo</h3><p>El resultado puede quedar como saldo o retirarse segun configuracion.</p></div></article>
+      </div>
+    </section>
+  </main>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi cuenta | Bitcoin Tesis</title>
+  <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio"><img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin"><span>Bitcoin</span></a>
+    <nav class="desktop-nav" aria-label="Menu principal">
+      <a href="quienes-somos.html">Quienes somos</a>
+      <div class="nav-dropdown"><button type="button">Mercado</button><div class="nav-dropdown-menu"><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a></div></div>
+      <a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="account-actions">
+      <a class="login-link" href="ingresar.html">Ingresar</a>
+      <div class="account-menu">
+        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false"><span class="account-icon"></span></button>
+        <div class="account-dropdown">
+          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+          <a href="mi-cuenta.html">Mi cuenta</a>
+          <a href="registro.html">Registrarme</a>
+          <a href="ingresar.html" data-logout>Cerrar sesion</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <a href="../index.html">Inicio</a><a href="quienes-somos.html">Quienes somos</a><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a><a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a><a href="ingresar.html">Ingresar</a>
+  </nav>
+
+  <main class="account-page account-dashboard-page">
+    <section class="account-dashboard">
+      <a class="account-breadcrumb" href="../index.html">Inicio</a>
+      <div class="account-dashboard-heading">
+        <p class="eyebrow">Mi cuenta</p>
+        <h1>Perfil de usuario</h1>
+      </div>
+
+      <div class="account-dashboard-grid">
+        <article class="account-panel profile-panel">
+          <header class="account-panel-header">
+            <h1>Perfil</h1>
+            <a href="registro.html">Editar</a>
+          </header>
+
+          <dl class="profile-details">
+            <div>
+              <dt>Nombre</dt>
+              <dd data-profile-name>Rosario</dd>
+            </div>
+            <div>
+              <dt>Apellido</dt>
+              <dd data-profile-lastname>Fernandez</dd>
+            </div>
+            <div>
+              <dt>DNI</dt>
+              <dd>43879767</dd>
+            </div>
+            <div>
+              <dt>Telefono local, area + numero</dt>
+              <dd>541123989897</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd data-profile-email>rosario.2457@gmail.com</dd>
+            </div>
+          </dl>
+        </article>
+
+        <div class="account-side-panels">
+          <article class="account-panel compact-account-panel">
+            <header class="account-panel-header">
+              <h2>Metodos de Pago</h2>
+            </header>
+            <a class="account-add-link" href="contacto.html">+Nueva Tarjeta</a>
+          </article>
+
+          <article class="account-panel compact-account-panel">
+            <header class="account-panel-header">
+              <h2>Direcciones</h2>
+            </header>
+            <a class="account-add-link" href="contacto.html">+ Nueva Direccion</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!--
+    <section class="account-hero section-pattern">
+      <div class="account-copy reveal reveal-left">
+        <p class="eyebrow">Mi cuenta</p>
+        <h1 data-account-heading>Condiciones y estado de cuenta</h1>
+        <p>Este panel muestra las condiciones necesarias para operar Bitcoin: validacion, seguridad, limites, estado de cuenta y requisitos antes de comprar o vender.</p>
+        <div class="hero-actions" data-guest-actions><a class="button button-primary" href="registro.html">Crear cuenta</a><a class="button button-outline" href="ingresar.html">Ingresar</a></div>
+      </div>
+      <div class="account-status-card reveal reveal-right">
+        <span class="account-icon big-account-icon"></span>
+        <p class="eyebrow">Estado referencial</p>
+        <h2 data-account-status-title>Cuenta no iniciada</h2>
+        <p>Ingresá o registrate para ver saldos, validaciones reales y limites personalizados.</p>
+      </div>
+    </section>
+
+    <section class="account-conditions">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Antes de operar</p>
+        <h2>Condiciones principales</h2>
+      </div>
+      <div class="account-condition-grid">
+        <article class="account-condition reveal" data-number="01"><h3>Verificacion de identidad</h3><p>Para operar con limites mayores, la cuenta debe validar datos personales y contacto.</p><strong>Pendiente</strong></article>
+        <article class="account-condition reveal" data-number="02"><h3>Seguridad activa</h3><p>Usa contraseña fuerte y validacion secundaria cuando este disponible.</p><strong>Recomendada</strong></article>
+        <article class="account-condition reveal" data-number="03"><h3>Limites de operacion</h3><p>Los limites dependen del nivel de cuenta, validacion y politicas de riesgo.</p><strong>Variable</strong></article>
+        <article class="account-condition reveal" data-number="04"><h3>Cuenta bancaria o wallet</h3><p>Para retiros o transferencias, el destino debe estar verificado.</p><strong>Requerido</strong></article>
+      </div>
+    </section>
+
+    <section class="account-rules section-pattern">
+      <div class="process-copy reveal reveal-left">
+        <p class="eyebrow">Reglas de uso</p>
+        <h2>Que tenes que mirar en tu cuenta</h2>
+        <p>Antes de comprar o vender, revisa que tu estado de cuenta permita operar, que tengas fondos suficientes y que los datos de retiro sean correctos.</p>
+      </div>
+      <div class="process-panel reveal reveal-right">
+        <article><span>01</span><div><h3>Estado de validacion</h3><p>Confirma si tu cuenta esta pendiente, activa o limitada.</p></div></article>
+        <article><span>02</span><div><h3>Saldo disponible</h3><p>Verifica BTC y moneda local antes de iniciar una operacion.</p></div></article>
+        <article><span>03</span><div><h3>Historial y alertas</h3><p>Controla movimientos recientes y notificaciones de seguridad.</p></div></article>
+      </div>
+    </section>
+    -->
+  </main>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

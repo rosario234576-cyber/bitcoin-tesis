@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Bitcoin Tesis</title>
+  <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio"><img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin"><span>Bitcoin</span></a>
+    <nav class="desktop-nav" aria-label="Menu principal">
+      <a href="quienes-somos.html">Quienes somos</a>
+      <div class="nav-dropdown"><button type="button">Mercado</button><div class="nav-dropdown-menu"><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a></div></div>
+      <a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="account-actions">
+      <a class="login-link" href="ingresar.html">Ingresar</a>
+      <div class="account-menu">
+        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false"><span class="account-icon"></span></button>
+        <div class="account-dropdown">
+          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+          <a href="mi-cuenta.html">Mi cuenta</a>
+          <a href="registro.html">Registrarme</a>
+          <a href="ingresar.html" data-logout>Cerrar sesion</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <a href="../index.html">Inicio</a><a href="quienes-somos.html">Quienes somos</a><a href="comprar.html">Comprar</a><a href="vender.html">Vender</a><a href="beneficios.html">Beneficios</a><a href="ayuda-faq.html">Ayuda/FAQ</a><a href="contacto.html">Contacto</a><a href="ingresar.html">Mi cuenta</a>
+  </nav>
+
+  <main class="contact-page">
+    <section class="contact-hero section-pattern">
+      <div class="contact-hero-copy reveal reveal-left">
+        <p class="eyebrow">Contacto</p>
+        <h1>Hablemos sobre tu operacion Bitcoin</h1>
+        <p>Consultas sobre registro, compra, venta, seguridad, retiros o soporte. Dejanos tu mensaje y te respondemos con una guia clara.</p>
+        <div class="contact-fast">
+          <span>Soporte 24/7</span>
+          <span>Mercado BTC</span>
+          <span>Cuenta segura</span>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-right" id="contact-form">
+        <p class="eyebrow">Enviar consulta</p>
+        <label class="field"><span>Nombre</span><input type="text" name="name" placeholder="Tu nombre" required></label>
+        <label class="field"><span>Email</span><input type="email" name="email" placeholder="tuemail@mail.com" required></label>
+        <label class="field"><span>Motivo</span><select name="topic" required><option value="">Seleccionar</option><option>Compra de Bitcoin</option><option>Venta de Bitcoin</option><option>Registro o cuenta</option><option>Seguridad</option><option>Soporte general</option></select></label>
+        <label class="field"><span>Mensaje</span><textarea name="message" rows="5" placeholder="Contanos en que podemos ayudarte" required></textarea></label>
+        <button class="button button-primary full-button" type="submit">Enviar mensaje</button>
+        <p class="login-message" id="contact-message" aria-live="polite">Respuesta estimada dentro de las proximas horas.</p>
+      </form>
+    </section>
+
+    <section class="contact-channels">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Canales</p>
+        <h2>Elegí la forma de contacto</h2>
+      </div>
+      <div class="contact-channel-grid">
+        <article class="contact-channel reveal" data-number="01"><img src="../assets/RecursosWeb/Billetera.png" alt=""><h3>Soporte de cuenta</h3><p>Ayuda con ingreso, registro, validacion y condiciones de cuenta.</p><a href="mi-cuenta.html">Ver mi cuenta</a></article>
+        <article class="contact-channel reveal" data-number="02"><img src="../assets/RecursosWeb/Monedas.png" alt=""><h3>Operaciones BTC</h3><p>Consultas sobre comprar, vender, cotizaciones, comisiones y saldos.</p><a href="comprar.html">Ir a mercado</a></article>
+        <article class="contact-channel reveal" data-number="03"><img src="../assets/RecursosWeb/Escudo.png" alt=""><h3>Seguridad</h3><p>Recomendaciones para proteger tu cuenta, contraseña y movimientos.</p><a href="ayuda-faq.html">Leer FAQ</a></article>
+      </div>
+    </section>
+
+    <section class="contact-info section-pattern">
+      <div class="process-copy reveal reveal-left">
+        <p class="eyebrow">Informacion util</p>
+        <h2>Antes de escribirnos</h2>
+        <p>Para acelerar la respuesta, incluye el motivo de consulta, moneda, monto aproximado y si el problema esta relacionado con compra, venta, registro o seguridad.</p>
+      </div>
+      <div class="process-panel reveal reveal-right">
+        <article><span>01</span><div><h3>Operacion</h3><p>Indica si queres comprar, vender o revisar una transaccion.</p></div></article>
+        <article><span>02</span><div><h3>Cuenta</h3><p>Contanos si ya estas registrado o si necesitas crear acceso.</p></div></article>
+        <article><span>03</span><div><h3>Seguridad</h3><p>No compartas contraseñas, codigos ni claves privadas.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
