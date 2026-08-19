@@ -315,6 +315,26 @@ document.querySelectorAll(".chart-periods").forEach((periodGroup) => {
   });
 });
 
+const heroMarketDashboard = document.querySelector(".market-dashboard");
+const heroVisual = document.querySelector(".hero-visual");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (heroMarketDashboard && heroVisual && window.matchMedia("(min-width: 981px)").matches && !reduceMotion.matches) {
+  heroVisual.addEventListener("pointermove", (event) => {
+    const bounds = heroVisual.getBoundingClientRect();
+    const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    heroMarketDashboard.style.setProperty("--tilt-x", `${relativeY * -5}deg`);
+    heroMarketDashboard.style.setProperty("--tilt-y", `${relativeX * 7}deg`);
+  });
+
+  heroVisual.addEventListener("pointerleave", () => {
+    heroMarketDashboard.style.setProperty("--tilt-x", "0deg");
+    heroMarketDashboard.style.setProperty("--tilt-y", "0deg");
+  });
+}
+
 const faqSearchInput = document.querySelector("#faq-search-input");
 const faqFilters = document.querySelectorAll(".faq-filter");
 const faqRows = document.querySelectorAll(".faq-row");
