@@ -4,17 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bitcoin Criptomoneda | Compra y venta de Bitcoin</title>
-  <meta name="description" content="Interfaz referencial para comprar, vender, seguir y aprender sobre Bitcoin en tiempo real.">
+  <meta name="description" content="Interfaz referencial para comprar, vender, seguir y aprender sobre Bitcoin. Proyecto de tesis sobre diseño UX/UI.">
   <link rel="icon" type="image/png" href="assets/Logo/IsoNaranja.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,100..900;1,50..150,100..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/landing.css">
 </head>
-<body>
+<body class="landing">
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- Nivel 1: navegacion global -->
+  <!-- Barra de progreso de lectura -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Navegacion global fija -->
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#home" aria-label="Bitcoin inicio">
@@ -22,21 +26,14 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Menu principal">
-        <a href="Paginas/quienes-somos.html">Quienes somos</a>
-        <div class="nav-dropdown">
-          <button type="button">Mercado <span class="chevron" aria-hidden="true"></span></button>
-          <div class="nav-dropdown-menu">
-            <a href="Paginas/comprar.html"><strong>Comprar</strong><small>Adquiri BTC con USD o ARS</small></a>
-            <a href="Paginas/vender.html"><strong>Vender</strong><small>Converti BTC a tu moneda</small></a>
-          </div>
-        </div>
-        <a href="Paginas/beneficios.html">Beneficios</a>
+        <a href="#home" aria-current="page">Inicio</a>
+        <a href="Paginas/mercado.html">Mercado</a>
+        <a href="Paginas/comprar.html">Comprar</a>
+        <a href="Paginas/vender.html">Vender</a>
         <a href="Paginas/ayuda-faq.html">Ayuda</a>
-        <a href="Paginas/contacto.html">Contacto</a>
       </nav>
 
       <div class="account-actions">
-        <a class="login-link" href="Paginas/ingresar.html">Ingresar</a>
         <a class="button button-primary button-sm register-link" href="Paginas/registro.html">Crear cuenta</a>
         <div class="account-menu">
           <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
@@ -44,6 +41,7 @@
           </button>
           <div class="account-dropdown">
             <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+            <a href="Paginas/ingresar.html">Ingresar</a>
             <a href="Paginas/mi-cuenta.html">Mi cuenta</a>
             <a href="Paginas/registro.html">Registrarme</a>
             <a href="Paginas/ingresar.html" data-logout>Cerrar sesion</a>
@@ -60,14 +58,15 @@
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
     <p class="mobile-menu-label">Explorar</p>
-    <a href="#home">Inicio</a>
-    <a href="Paginas/quienes-somos.html">Quienes somos</a>
+    <a href="#home" aria-current="page">Inicio</a>
+    <a href="Paginas/mercado.html">Mercado</a>
+    <a href="Paginas/comprar.html">Comprar</a>
+    <a href="Paginas/vender.html">Vender</a>
+    <a href="Paginas/ayuda-faq.html">Ayuda</a>
+    <p class="mobile-menu-label">Más</p>
+    <a href="Paginas/quienes-somos.html">Quiénes somos</a>
     <a href="Paginas/beneficios.html">Beneficios</a>
-    <a href="Paginas/ayuda-faq.html">Ayuda / FAQ</a>
     <a href="Paginas/contacto.html">Contacto</a>
-    <p class="mobile-menu-label">Mercado</p>
-    <a href="Paginas/comprar.html">Comprar BTC</a>
-    <a href="Paginas/vender.html">Vender BTC</a>
     <div class="mobile-menu-actions">
       <a class="button button-outline" href="Paginas/ingresar.html">Ingresar</a>
       <a class="button button-primary" href="Paginas/registro.html">Crear cuenta</a>
@@ -75,27 +74,26 @@
   </nav>
 
   <main id="main">
-    <!-- Nivel 2: propuesta de valor -->
-    <section class="hero" id="home">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="pill"><i class="dot"></i> Mercado abierto 24/7</p>
-          <h1>Bitcoin simple, seguro y <span class="text-accent">en un solo lugar</span></h1>
-          <p class="lead">Consulta el precio, simula una operacion y aprende a tu ritmo desde una experiencia clara y directa.</p>
-          <div class="hero-actions">
-            <a class="button button-primary button-lg" href="#operar">Empezar ahora</a>
-            <a class="button button-ghost button-lg" href="#mercado">Ver mercado <span aria-hidden="true">→</span></a>
+
+    <!-- 01 — Inicio -->
+    <section class="l-hero" id="home" data-section>
+      <div class="l-container l-hero-grid">
+        <div class="l-hero-copy">
+          <p class="l-index l-fade" style="--d:0"><span>01</span> Inicio</p>
+          <h1 class="l-hero-title">
+            <span class="l-line"><span style="--d:1">Operá Bitcoin</span></span>
+            <span class="l-line"><span style="--d:2"><em>sin adivinar</em></span></span>
+            <span class="l-line"><span style="--d:3">cada paso.</span></span>
+          </h1>
+          <p class="l-lead l-fade" style="--d:4">Consultá el precio, simulá una operación y entendé cada costo antes de confirmar. Una plataforma pensada para que la primera compra sea clara.</p>
+          <div class="l-actions l-fade" style="--d:5">
+            <a class="l-btn l-btn-primary" href="#operar">Probar el simulador <span aria-hidden="true">→</span></a>
+            <a class="l-btn l-btn-ghost" href="#como-funciona">Cómo funciona</a>
           </div>
-          <dl class="hero-proof">
-            <div><dt>Usuarios activos</dt><dd>10K+</dd></div>
-            <div><dt>Mercado</dt><dd>24/7</dd></div>
-            <div><dt>Spread</dt><dd>0.35%</dd></div>
-          </dl>
         </div>
 
-        <div class="hero-visual reveal">
-          <article class="market-dashboard card" aria-label="Resumen del mercado Bitcoin">
+        <div class="hero-visual l-hero-visual l-fade" style="--d:3">
+          <article class="market-dashboard l-dashboard" aria-label="Resumen del mercado Bitcoin">
             <header class="dashboard-head">
               <img src="assets/Logo/IsoNaranja.png" alt="">
               <div>
@@ -109,13 +107,13 @@
               <svg viewBox="0 0 500 200" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#ff8600" stop-opacity=".35"/>
-                    <stop offset="1" stop-color="#ff8600" stop-opacity="0"/>
+                    <stop offset="0" stop-color="#F7931A" stop-opacity=".32"/>
+                    <stop offset="1" stop-color="#F7931A" stop-opacity="0"/>
                   </linearGradient>
                 </defs>
                 <path class="chart-grid" d="M0 50H500M0 100H500M0 150H500"/>
                 <path class="chart-area" d="M0 180 L28 160 L52 165 L79 135 L104 150 L133 108 L158 85 L184 104 L214 70 L238 90 L270 50 L295 76 L322 60 L350 96 L380 60 L408 48 L438 20 L463 32 L500 6 L500 200 L0 200Z"/>
-                <path class="chart-line" d="M0 180 L28 160 L52 165 L79 135 L104 150 L133 108 L158 85 L184 104 L214 70 L238 90 L270 50 L295 76 L322 60 L350 96 L380 60 L408 48 L438 20 L463 32 L500 6"/>
+                <path class="chart-line" pathLength="1" d="M0 180 L28 160 L52 165 L79 135 L104 150 L133 108 L158 85 L184 104 L214 70 L238 90 L270 50 L295 76 L322 60 L350 96 L380 60 L408 48 L438 20 L463 32 L500 6"/>
               </svg>
             </div>
 
@@ -126,7 +124,7 @@
             <dl class="market-stats">
               <div><dt>Volumen 24h</dt><dd>32.4B</dd></div>
               <div><dt>Spread</dt><dd>0.35%</dd></div>
-              <div><dt>Variacion 30d</dt><dd class="up">+18.4%</dd></div>
+              <div><dt>Variación 30d</dt><dd class="up">+18.4%</dd></div>
             </dl>
 
             <div class="dashboard-actions">
@@ -136,198 +134,290 @@
           </article>
         </div>
       </div>
-    </section>
 
-    <!-- Franja de confianza -->
-    <section class="trust-bar" aria-label="Por que elegirnos">
-      <div class="container trust-grid">
-        <p><img src="assets/IconoNuevosWeb/IconoEscudo2.png" alt=""> Transacciones seguras</p>
-        <p><img src="assets/IconoNuevosWeb/IconoMoneda.png" alt=""> Compra desde USD 10</p>
-        <p><img src="assets/IconoNuevosWeb/IconoBilletera.png" alt=""> Billetera incluida</p>
-        <p><img src="assets/IconoNuevosWeb/IconoGorro.png" alt=""> Guias para empezar</p>
+      <!-- Franja de mercado -->
+      <div class="l-container" id="mercado">
+        <dl class="l-ticker l-fade" style="--d:7" aria-label="Indicadores de mercado referenciales">
+          <div><dt>BTC / USD</dt><dd>67.450 <span class="up">+2.8%</span></dd></div>
+          <div><dt>Volumen 24h</dt><dd>32.4B</dd></div>
+          <div><dt>Máximo 24h</dt><dd>68.120</dd></div>
+          <div><dt>Usuarios activos</dt><dd>10K+</dd></div>
+          <div><dt>Mercado abierto</dt><dd>24/7</dd></div>
+          <div><dt>Compra mínima</dt><dd>USD 10</dd></div>
+        </dl>
+        <p class="l-ticker-note">Valores referenciales para fines académicos. No es una cotización en vivo.</p>
       </div>
     </section>
 
-    <!-- Nivel 3: accion principal -->
-    <section class="section" id="operar">
-      <div class="container split">
-        <div class="reveal">
-          <header class="section-head">
-            <p class="eyebrow"><span>01</span> Operar</p>
-            <h2>Cambia tus dolares por Bitcoin en segundos</h2>
-            <p class="section-lead">Antes de confirmar ves el saldo, la cotizacion, la comision estimada y el monto final. Sin sorpresas.</p>
-          </header>
-          <ol class="steps">
-            <li><strong>Crea tu cuenta</strong><span>Registrate con tu email en menos de un minuto.</span></li>
-            <li><strong>Elegi el monto</strong><span>Ingresa cuanto queres comprar o vender en USD o ARS.</span></li>
-            <li><strong>Confirma la operacion</strong><span>Revisa el resumen y el BTC llega a tu billetera.</span></li>
+    <!-- 02 — Como funciona (scroll narrativo con panel sticky) -->
+    <section class="l-how" id="como-funciona" data-section>
+      <div class="l-container">
+        <header class="l-head l-reveal">
+          <p class="l-index"><span>02</span> Cómo funciona</p>
+          <h2>De la primera visita a tu primer satoshi, <em>en cuatro pasos.</em></h2>
+          <p class="l-lead">Bajá para recorrer el flujo completo. El panel de la derecha muestra lo que ves en pantalla en cada momento.</p>
+        </header>
+
+        <div class="l-how-grid">
+          <ol class="l-steps">
+            <li class="l-step" data-step="0">
+              <span class="l-step-num">01</span>
+              <h3>Creá tu cuenta</h3>
+              <p>Registrate con tu email en menos de un minuto. Sin formularios eternos: nombre, email y contraseña.</p>
+              <ul class="l-step-points">
+                <li>Validación en tiempo real</li>
+                <li>Contraseña visible a pedido</li>
+              </ul>
+              <div class="l-step-media" aria-hidden="true"></div>
+            </li>
+            <li class="l-step" data-step="1">
+              <span class="l-step-num">02</span>
+              <h3>Elegí el monto</h3>
+              <p>Indicá cuánto querés comprar o vender, en USD o ARS. Los montos rápidos te ahorran tipeo.</p>
+              <ul class="l-step-points">
+                <li>Compra desde USD 10</li>
+                <li>Cambio de moneda en un toque</li>
+              </ul>
+              <div class="l-step-media" aria-hidden="true"></div>
+            </li>
+            <li class="l-step" data-step="2">
+              <span class="l-step-num">03</span>
+              <h3>Revisá la cotización</h3>
+              <p>Antes de confirmar ves el precio, la comisión y el monto final. Nada aparece después.</p>
+              <ul class="l-step-points">
+                <li>Comisión desglosada</li>
+                <li>Resultado estimado en BTC</li>
+              </ul>
+              <div class="l-step-media" aria-hidden="true"></div>
+            </li>
+            <li class="l-step" data-step="3">
+              <span class="l-step-num">04</span>
+              <h3>Confirmá y seguí tu saldo</h3>
+              <p>El BTC llega a tu billetera y la operación queda registrada en tu actividad.</p>
+              <ul class="l-step-points">
+                <li>Comprobante inmediato</li>
+                <li>Historial siempre a mano</li>
+              </ul>
+              <div class="l-step-media" aria-hidden="true"></div>
+            </li>
           </ol>
+
+          <div class="l-stage" aria-hidden="true">
+            <div class="l-panel">
+              <div class="l-panel-top">
+                <span class="l-panel-step">Paso <b data-stage-count>01</b> / 04</span>
+                <span class="l-panel-title" data-stage-title>Creá tu cuenta</span>
+              </div>
+              <div class="l-panel-bar"><span></span></div>
+
+              <div class="l-screens">
+                <!-- Pantalla 1: registro -->
+                <div class="l-screen is-active" data-screen="0" data-title="Creá tu cuenta">
+                  <div class="l-s-head" style="--i:0"><img src="assets/Logo/IsoNaranja.png" alt=""><div><strong>Crear cuenta</strong><small>Paso 1 de 1</small></div></div>
+                  <div class="l-s-field" style="--i:1"><small>Nombre</small><span>Rosario Fernández</span></div>
+                  <div class="l-s-field" style="--i:2"><small>Email</small><span>rosario@email.com</span></div>
+                  <div class="l-s-field" style="--i:3"><small>Contraseña</small><span>••••••••••</span><em>Segura</em></div>
+                  <div class="l-s-ok" style="--i:4"><i></i> Cuenta lista para operar</div>
+                </div>
+
+                <!-- Pantalla 2: monto -->
+                <div class="l-screen" data-screen="1" data-title="Elegí el monto">
+                  <div class="l-s-tabs" style="--i:0"><span class="on">Comprar</span><span>Vender</span></div>
+                  <div class="l-s-amount" style="--i:1"><small>Pagás</small><strong>250</strong><span>USD</span></div>
+                  <div class="l-s-chips" style="--i:2"><span>50</span><span>100</span><span class="on">250</span><span>500</span></div>
+                  <div class="l-s-row" style="--i:3"><small>Saldo disponible</small><b>USD 1.200,00</b></div>
+                </div>
+
+                <!-- Pantalla 3: cotizacion -->
+                <div class="l-screen" data-screen="2" data-title="Revisá la cotización">
+                  <svg class="l-s-spark" style="--i:0" viewBox="0 0 300 80" preserveAspectRatio="none"><path pathLength="1" d="M0 70 L30 62 L60 66 L90 48 L120 54 L150 34 L180 40 L210 22 L240 28 L270 12 L300 8"/></svg>
+                  <div class="l-s-row" style="--i:1"><small>Precio BTC</small><b>USD 67.450</b></div>
+                  <div class="l-s-row" style="--i:2"><small>Comisión (0,80%)</small><b>USD 2,00</b></div>
+                  <div class="l-s-row" style="--i:3"><small>Monto neto</small><b>USD 248,00</b></div>
+                  <div class="l-s-total" style="--i:4"><small>Recibís estimado</small><strong>0,00367680 BTC</strong></div>
+                </div>
+
+                <!-- Pantalla 4: confirmacion -->
+                <div class="l-screen" data-screen="3" data-title="Confirmá y seguí tu saldo">
+                  <div class="l-s-check" style="--i:0"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+                  <div class="l-s-done" style="--i:1"><strong>Operación simulada</strong><small>Compra registrada en tu billetera</small></div>
+                  <div class="l-s-total" style="--i:2"><small>Saldo BTC</small><strong>0,00367680 BTC</strong></div>
+                  <div class="l-s-row" style="--i:3"><small>Compra · hace instantes</small><b class="up">+0,00367680</b></div>
+                </div>
+              </div>
+
+              <div class="l-panel-dots">
+                <span class="is-active"></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — Beneficios -->
+    <section class="l-benefits" id="beneficios" data-section>
+      <div class="l-container">
+        <header class="l-head l-head-row l-reveal">
+          <div>
+            <p class="l-index"><span>03</span> Beneficios</p>
+            <h2>Todo lo necesario para operar <em>con confianza.</em></h2>
+          </div>
+          <p class="l-lead">Cuatro pilares de diseño para que comprar Bitcoin sea claro, rápido y seguro, incluso la primera vez.</p>
+        </header>
+
+        <ol class="l-benefit-list">
+          <li class="l-benefit l-reveal">
+            <span class="l-benefit-num">01</span>
+            <h3>Compra y venta instantánea</h3>
+            <p>Operá de forma rápida, segura y sin intermediarios. Disponible 24/7 con tasas actualizadas.</p>
+            <img src="assets/IconoNuevosWeb/IconoMoneda.png" alt="">
+          </li>
+          <li class="l-benefit l-reveal">
+            <span class="l-benefit-num">02</span>
+            <h3>Billetera digital segura</h3>
+            <p>Guardá tus activos en una wallet protegida por encriptación avanzada, desde cualquier dispositivo.</p>
+            <img src="assets/IconoNuevosWeb/IconoBilletera.png" alt="">
+          </li>
+          <li class="l-benefit l-reveal">
+            <span class="l-benefit-num">03</span>
+            <h3>Seguimiento de mercado</h3>
+            <p>Gráficos, precios y alertas personalizadas para decidir con datos y no por impulso.</p>
+            <img src="assets/IconoNuevosWeb/IconoEscudo2.png" alt="">
+          </li>
+          <li class="l-benefit l-reveal">
+            <span class="l-benefit-num">04</span>
+            <h3>Educación cripto</h3>
+            <p>Aprendé desde cero sobre blockchain, Bitcoin y seguridad operativa con guías breves.</p>
+            <img src="assets/IconoNuevosWeb/IconoGorro.png" alt="">
+          </li>
+        </ol>
+
+        <div class="l-more l-reveal">
+          <a class="l-link" href="Paginas/beneficios.html">Ver todos los beneficios <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — Simulador -->
+    <section class="l-sim" id="operar" data-section>
+      <div class="l-container l-sim-grid">
+        <div class="l-sim-copy">
+          <header class="l-head l-reveal">
+            <p class="l-index"><span>04</span> Simulador</p>
+            <h2>Probá una operación <em>sin riesgo.</em></h2>
+            <p class="l-lead">Elegí comprar o vender, ingresá un monto y mirá cómo cambian la cotización, la comisión y el resultado en el momento.</p>
+          </header>
+
+          <ul class="l-sim-points l-reveal">
+            <li><b>Cotización</b><span>Precio referencial de BTC en USD o ARS.</span></li>
+            <li><b>Comisión</b><span>0,80% al comprar y 0,60% al vender, siempre visible.</span></li>
+            <li><b>Resultado</b><span>Lo que recibirías, calculado antes de confirmar.</span></li>
+          </ul>
+
+          <div class="l-activity l-reveal">
+            <div class="l-activity-head"><h3>Actividad reciente</h3><a class="l-link" href="Paginas/comprar.html">Ir a operar →</a></div>
+            <table>
+              <thead><tr><th scope="col">Tipo</th><th scope="col">Monto</th><th scope="col">Precio</th><th scope="col">Hora</th></tr></thead>
+              <tbody>
+                <tr><td><span class="tag tag-buy">Compra</span></td><td>0.0042 BTC</td><td>67.448</td><td>hace 2 min</td></tr>
+                <tr><td><span class="tag tag-sell">Venta</span></td><td>0.0150 BTC</td><td>67.452</td><td>hace 5 min</td></tr>
+                <tr><td><span class="tag tag-buy">Compra</span></td><td>0.1000 BTC</td><td>67.430</td><td>hace 9 min</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <form class="trade-card card reveal" id="trade-form">
-          <div class="trade-tabs segmented" role="tablist" aria-label="Tipo de operacion">
-            <button class="trade-tab active" type="button" data-mode="buy">Comprar</button>
-            <button class="trade-tab" type="button" data-mode="sell">Vender</button>
-          </div>
-          <label class="field">
-            <span>Pagas</span>
-            <div class="input-row">
-              <input id="fiat-input" type="number" min="0" value="250" inputmode="decimal">
-              <select id="fiat-currency" aria-label="Moneda fiat">
+        <form class="l-sim-card l-reveal" id="trade-form" novalidate>
+          <div class="l-sim-top">
+            <div class="l-seg" role="group" aria-label="Tipo de operación">
+              <button class="trade-tab active" type="button" data-mode="buy" aria-pressed="true">Comprar</button>
+              <button class="trade-tab" type="button" data-mode="sell" aria-pressed="false">Vender</button>
+            </div>
+            <label class="l-currency">
+              <span class="sr-only">Moneda</span>
+              <select id="fiat-currency" aria-label="Moneda">
                 <option value="USD">USD</option>
                 <option value="ARS">ARS</option>
               </select>
+            </label>
+          </div>
+
+          <label class="l-field" for="fiat-input">
+            <span id="fiat-label">Pagás</span>
+            <div class="l-input">
+              <input id="fiat-input" type="text" inputmode="decimal" autocomplete="off" value="250" aria-describedby="trade-error">
+              <b id="input-unit">USD</b>
             </div>
           </label>
-          <label class="field">
-            <span>Recibis estimado</span>
-            <div class="input-row is-readonly">
-              <input id="btc-output" type="text" readonly>
-              <strong>BTC</strong>
+          <div class="l-chips" id="trade-chips" aria-label="Montos rápidos"></div>
+          <p class="l-error" id="trade-error" role="alert"></p>
+
+          <div class="l-field">
+            <span id="output-label">Recibís estimado</span>
+            <div class="l-input is-readonly">
+              <input id="btc-output" type="text" readonly aria-labelledby="output-label">
+              <b id="output-unit">BTC</b>
             </div>
-          </label>
-          <dl class="trade-summary">
-            <div><dt>Precio BTC</dt><dd id="btc-price">USD 67.450</dd></div>
-            <div><dt>Comision</dt><dd id="fee-output">0.80%</dd></div>
-            <div class="total"><dt>Total neto</dt><dd id="net-output">USD 248.00</dd></div>
+          </div>
+
+          <dl class="l-summary">
+            <div><dt>Cotización BTC</dt><dd id="btc-price">USD 67.450</dd></div>
+            <div><dt>Comisión</dt><dd id="fee-output">0.80%</dd></div>
+            <div class="total"><dt id="net-label">Monto neto</dt><dd id="net-output">USD 248.00</dd></div>
           </dl>
-          <button class="button button-primary button-lg full-button" type="submit">Simular operacion</button>
-          <p class="form-note" id="trade-message" aria-live="polite">Cotizacion referencial para maqueta. Lista para conectar a una API.</p>
+
+          <button class="l-btn l-btn-primary l-btn-full" type="submit">Simular operación</button>
+          <p class="l-sim-note" id="trade-message" aria-live="polite"><i></i> Simulación académica: valores referenciales, sin operaciones reales.</p>
         </form>
       </div>
     </section>
 
-    <!-- Nivel 3: informacion de mercado -->
-    <section class="section section-alt" id="mercado">
-      <div class="container">
-        <header class="section-head section-head-row reveal">
-          <div>
-            <p class="eyebrow"><span>02</span> Mercado</p>
-            <h2>Segui el precio y tus saldos sin perder velocidad</h2>
+    <!-- 05 — Ayuda -->
+    <section class="l-faq" id="ayuda" data-section>
+      <div class="l-container l-faq-grid">
+        <header class="l-head l-faq-head l-reveal">
+          <p class="l-index"><span>05</span> Ayuda</p>
+          <h2>Preguntas rápidas <em>antes de operar.</em></h2>
+          <p class="l-lead">Las dudas más comunes de quienes compran Bitcoin por primera vez.</p>
+          <a class="l-link" href="Paginas/ayuda-faq.html">Ver todas las preguntas <span aria-hidden="true">→</span></a>
+        </header>
+
+        <div class="l-acc l-reveal">
+          <div class="l-acc-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">¿Cómo compro Bitcoin?<i aria-hidden="true"></i></button></h3>
+            <div class="l-acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>Elegís comprar, ingresás el monto, revisás la cotización y confirmás la operación desde tu cuenta.</p></div></div>
           </div>
-          <p class="section-lead">Variacion diaria, liquidez y actividad reciente en un tablero compacto pensado para quienes operan seguido.</p>
-        </header>
-
-        <div class="kpi-grid">
-          <article class="kpi card reveal">
-            <span class="label">BTC / USD</span>
-            <strong>67.450</strong>
-            <span class="badge badge-up">+2.8%</span>
-          </article>
-          <article class="kpi card reveal">
-            <span class="label">Volumen 24h</span>
-            <strong>32.4B</strong>
-            <span class="badge">Alto</span>
-          </article>
-          <article class="kpi card reveal">
-            <span class="label">Spread</span>
-            <strong>0.35%</strong>
-            <span class="badge">Bajo</span>
-          </article>
-          <article class="kpi card reveal">
-            <span class="label">Maximo 24h</span>
-            <strong>68.120</strong>
-            <span class="badge badge-up">+1.0%</span>
-          </article>
-        </div>
-
-        <div class="activity card reveal">
-          <header class="activity-head">
-            <h3>Actividad reciente</h3>
-            <a class="text-link" href="Paginas/comprar.html">Ir a operar →</a>
-          </header>
-          <table>
-            <thead>
-              <tr><th scope="col">Tipo</th><th scope="col">Monto</th><th scope="col">Precio</th><th scope="col">Hora</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><span class="tag tag-buy">Compra</span></td><td>0.0042 BTC</td><td>67.448</td><td>hace 2 min</td></tr>
-              <tr><td><span class="tag tag-sell">Venta</span></td><td>0.0150 BTC</td><td>67.452</td><td>hace 5 min</td></tr>
-              <tr><td><span class="tag tag-buy">Compra</span></td><td>0.1000 BTC</td><td>67.430</td><td>hace 9 min</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nivel 3: beneficios -->
-    <section class="section" id="beneficios">
-      <div class="container">
-        <header class="section-head section-head-center reveal">
-          <p class="eyebrow"><span>03</span> Beneficios</p>
-          <h2>Explora el mundo de las criptomonedas</h2>
-          <p class="section-lead">Cuatro modulos base para que la experiencia sea clara, rapida y confiable.</p>
-        </header>
-
-        <div class="feature-grid">
-          <article class="feature-card card reveal">
-            <img src="assets/IconoNuevosWeb/IconoMoneda.png" alt="">
-            <h3>Compra y venta instantanea</h3>
-            <p>Opera de forma rapida, segura y sin intermediarios.</p>
-            <small>Disponible 24/7 con tasas actualizadas.</small>
-          </article>
-          <article class="feature-card card reveal">
-            <img src="assets/IconoNuevosWeb/IconoBilletera.png" alt="">
-            <h3>Billetera digital segura</h3>
-            <p>Guarda tus activos en una wallet protegida por encriptacion avanzada.</p>
-            <small>Acceso desde cualquier dispositivo.</small>
-          </article>
-          <article class="feature-card card reveal">
-            <img src="assets/IconoNuevosWeb/IconoEscudo2.png" alt="">
-            <h3>Seguimiento de mercado</h3>
-            <p>Graficos, precios en vivo y alertas personalizadas para BTC.</p>
-            <small>Decisiones con datos en tiempo real.</small>
-          </article>
-          <article class="feature-card card reveal">
-            <img src="assets/IconoNuevosWeb/IconoGorro.png" alt="">
-            <h3>Educacion cripto</h3>
-            <p>Aprende desde cero sobre blockchain, Bitcoin y seguridad operativa.</p>
-            <small>Inverti con conocimiento y confianza.</small>
-          </article>
-        </div>
-        <div class="center reveal">
-          <a class="button button-outline" href="Paginas/beneficios.html">Ver todos los beneficios</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Nivel 3: ayuda -->
-    <section class="section section-alt" id="ayuda">
-      <div class="container split split-faq">
-        <header class="section-head reveal">
-          <p class="eyebrow"><span>04</span> Ayuda</p>
-          <h2>Preguntas rapidas antes de operar</h2>
-          <p class="section-lead">Las dudas mas comunes de quienes compran Bitcoin por primera vez.</p>
-          <a class="button button-outline" href="Paginas/ayuda-faq.html">Ver todas las preguntas</a>
-        </header>
-        <div class="faq-list reveal">
-          <button class="faq-item" type="button">
-            <span>Como compro Bitcoin?</span>
-            <p>Elegis comprar, ingresas el monto, revisas la cotizacion y confirmas la operacion desde tu cuenta.</p>
-          </button>
-          <button class="faq-item" type="button">
-            <span>La cotizacion es en tiempo real?</span>
-            <p>Esta maqueta usa valores referenciales. La interfaz queda preparada para conectar una API de mercado.</p>
-          </button>
-          <button class="faq-item" type="button">
-            <span>Puedo vender y retirar fondos?</span>
-            <p>Si. El flujo contempla venta de BTC, saldo disponible y retiro hacia una cuenta verificada.</p>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cierre: llamada a la accion -->
-    <section class="section" id="contacto">
-      <div class="container">
-        <div class="cta-band reveal">
-          <div>
-            <h2>Listo para operar Bitcoin?</h2>
-            <p>Crea tu cuenta gratis o escribinos si tenes dudas. Te respondemos en el dia.</p>
+          <div class="l-acc-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">¿La cotización es en tiempo real?<i aria-hidden="true"></i></button></h3>
+            <div class="l-acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>No. Esta interfaz usa valores referenciales con fines académicos. Está preparada para conectarse a una API de mercado.</p></div></div>
           </div>
-          <div class="cta-actions">
-            <a class="button button-dark button-lg" href="Paginas/registro.html">Crear cuenta</a>
-            <a class="button button-on-accent button-lg" href="Paginas/contacto.html">Contactar</a>
+          <div class="l-acc-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">¿Cuánto cobran de comisión?<i aria-hidden="true"></i></button></h3>
+            <div class="l-acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>En la simulación, 0,80% al comprar y 0,60% al vender. El monto se muestra siempre antes de confirmar.</p></div></div>
+          </div>
+          <div class="l-acc-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">¿Puedo vender y retirar fondos?<i aria-hidden="true"></i></button></h3>
+            <div class="l-acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>Sí. El flujo contempla la venta de BTC, el saldo disponible y el retiro hacia una cuenta verificada.</p></div></div>
+          </div>
+          <div class="l-acc-item">
+            <h3><button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">¿Cuál es el monto mínimo?<i aria-hidden="true"></i></button></h3>
+            <div class="l-acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Podés simular compras desde USD 10 (o ARS 10.000) y ventas desde 0,0001 BTC.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — Cierre -->
+    <section class="l-close" id="contacto" data-section>
+      <div class="l-container">
+        <div class="l-close-inner l-reveal">
+          <p class="l-index"><span>06</span> Empezá hoy</p>
+          <h2>Bitcoin, <em>explicado</em><br>antes de operar.</h2>
+          <p class="l-lead">Creá tu cuenta gratis o escribinos si tenés dudas. Te respondemos en el día.</p>
+          <div class="l-actions">
+            <a class="l-btn l-btn-primary" href="Paginas/registro.html">Crear cuenta <span aria-hidden="true">→</span></a>
+            <a class="l-btn l-btn-ghost" href="Paginas/contacto.html">Contactar</a>
           </div>
         </div>
       </div>
@@ -345,11 +435,11 @@
         <h4>Mercado</h4>
         <a href="Paginas/comprar.html">Comprar</a>
         <a href="Paginas/vender.html">Vender</a>
-        <a href="#mercado">Cotizacion</a>
+        <a href="Paginas/mercado.html">Cotización</a>
       </nav>
       <nav aria-label="Empresa">
         <h4>Empresa</h4>
-        <a href="Paginas/quienes-somos.html">Quienes somos</a>
+        <a href="Paginas/quienes-somos.html">Quiénes somos</a>
         <a href="Paginas/beneficios.html">Beneficios</a>
         <a href="Paginas/contacto.html">Contacto</a>
       </nav>
@@ -367,5 +457,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/landing.js"></script>
 </body>
 </html>

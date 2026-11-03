@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado | Bitcoin Criptomoneda</title>
+  <meta name="description" content="Aprendé a leer el gráfico de Bitcoin: precio, variación, máximo y mínimo, volumen, spread y temporalidad.">
+  <link rel="icon" type="image/png" href="../assets/Logo/IsoNaranja.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wdth,wght@0,50..150,100..900;1,50..150,100..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/landing.css">
+</head>
+<body class="landing landing-market">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Bitcoin inicio">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="../index.html">Inicio</a>
+        <a href="mercado.html" aria-current="page">Mercado</a>
+        <a href="comprar.html">Comprar</a>
+        <a href="vender.html">Vender</a>
+        <a href="ayuda-faq.html">Ayuda</a>
+      </nav>
+
+      <div class="account-actions">
+        <a class="button button-primary button-sm register-link" href="registro.html">Crear cuenta</a>
+        <div class="account-menu">
+          <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
+            <span class="account-icon"></span>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+            <a href="ingresar.html">Ingresar</a>
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="registro.html">Registrarme</a>
+            <a href="ingresar.html" data-logout>Cerrar sesion</a>
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <p class="mobile-menu-label">Explorar</p>
+    <a href="../index.html">Inicio</a>
+    <a href="mercado.html" aria-current="page">Mercado</a>
+    <a href="comprar.html">Comprar</a>
+    <a href="vender.html">Vender</a>
+    <a href="ayuda-faq.html">Ayuda</a>
+    <p class="mobile-menu-label">Más</p>
+    <a href="quienes-somos.html">Quiénes somos</a>
+    <a href="beneficios.html">Beneficios</a>
+    <a href="contacto.html">Contacto</a>
+    <div class="mobile-menu-actions">
+      <a class="button button-outline" href="ingresar.html">Ingresar</a>
+      <a class="button button-primary" href="registro.html">Crear cuenta</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- 01 — Grafico interactivo -->
+    <section class="l-hero mk-hero" id="grafico">
+      <div class="l-container l-hero-grid mk-hero-grid">
+        <div class="l-hero-copy">
+          <p class="l-index l-fade" style="--d:0"><span>01</span> Mercado</p>
+          <h1 class="l-hero-title mk-title">
+            <span class="l-line"><span style="--d:1">Aprendé a leer</span></span>
+            <span class="l-line"><span style="--d:2"><em>el gráfico.</em></span></span>
+          </h1>
+          <p class="l-lead l-fade" style="--d:3">Pasá el mouse o el dedo por el gráfico para ver el precio en cada momento y cambiá el período. Abajo te explicamos qué significa cada parte, una por una.</p>
+          <div class="l-actions l-fade" style="--d:4">
+            <a class="l-btn l-btn-primary" href="#recorrido">Empezar el recorrido <span aria-hidden="true">↓</span></a>
+            <a class="l-btn l-btn-ghost" href="comprar.html">Comprar BTC</a>
+          </div>
+        </div>
+
+        <div class="mk l-fade" style="--d:3" data-chart="play" aria-label="Gráfico interactivo referencial de BTC/USD"></div>
+      </div>
+    </section>
+
+    <!-- 02 — Recorrido: cada parte del grafico -->
+    <section class="mk-tour" id="recorrido">
+      <div class="l-container">
+        <header class="l-head l-reveal">
+          <p class="l-index"><span>02</span> Recorrido</p>
+          <h2>Seis datos, <em>uno por vez.</em></h2>
+          <p class="l-lead">Bajá despacio: el gráfico resalta la parte que se explica en cada paso.</p>
+        </header>
+
+        <div class="mk-tour-grid">
+          <ol class="mk-steps">
+            <li class="mk-step is-active" data-focus="price">
+              <span class="l-step-num">01</span>
+              <h3>Precio</h3>
+              <p>Es el último valor al que se operó 1 BTC. La línea muestra cómo se movió en el período elegido y el punto que late es el precio de ahora.</p>
+            </li>
+            <li class="mk-step" data-focus="change">
+              <span class="l-step-num">02</span>
+              <h3>Variación</h3>
+              <p>Compara el precio actual con el de apertura del período. Verde si subió, rojo si bajó. Es un porcentaje del pasado, no una ganancia asegurada.</p>
+            </li>
+            <li class="mk-step" data-focus="range">
+              <span class="l-step-num">03</span>
+              <h3>Máximo y mínimo</h3>
+              <p>El precio más alto y el más bajo del período. Te muestran cuánto se movió el mercado y si estás comprando cerca de un pico.</p>
+            </li>
+            <li class="mk-step" data-focus="volume">
+              <span class="l-step-num">04</span>
+              <h3>Volumen</h3>
+              <p>Las barras de abajo indican cuánto BTC se operó en cada tramo. Barras altas significan mucha actividad: un movimiento con volumen alto es más confiable.</p>
+            </li>
+            <li class="mk-step" data-focus="spread">
+              <span class="l-step-num">05</span>
+              <h3>Spread</h3>
+              <p>La diferencia entre el precio al que comprás y al que vendés. La plataforma te vende un poco más caro y te compra un poco más barato. Acá es del 0,35%.</p>
+            </li>
+            <li class="mk-step" data-focus="period">
+              <span class="l-step-num">06</span>
+              <h3>Temporalidad</h3>
+              <p>1D, 1S, 1M y 1A cambian la ventana de tiempo. El mismo precio puede verse como una suba en el día y como una baja en la semana.</p>
+            </li>
+          </ol>
+
+          <div class="mk-stage">
+            <div class="mk" data-chart="tour" data-focus="price" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — Cierre -->
+    <section class="l-close" id="cierre">
+      <div class="l-container">
+        <div class="l-close-inner l-reveal">
+          <p class="l-index"><span>03</span> Con todo claro</p>
+          <h2>Ya sabés leerlo.<br><em>Ahora probalo.</em></h2>
+          <p class="l-lead">Todos los valores son referenciales con fines académicos: no hay cotización en vivo ni operaciones reales.</p>
+          <div class="l-actions">
+            <a class="l-btn l-btn-primary" href="comprar.html">Comprar BTC <span aria-hidden="true">→</span></a>
+            <a class="l-btn l-btn-ghost" href="vender.html">Vender BTC</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/Logo/LogoNaranja.png" alt="Bitcoin">
+        <p>Interfaz referencial para comprar, vender y aprender sobre Bitcoin.</p>
+      </div>
+      <nav aria-label="Mercado">
+        <h4>Mercado</h4>
+        <a href="comprar.html">Comprar</a>
+        <a href="vender.html">Vender</a>
+        <a href="mercado.html">Cotización</a>
+      </nav>
+      <nav aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <nav aria-label="Cuenta">
+        <h4>Cuenta</h4>
+        <a href="ingresar.html">Ingresar</a>
+        <a href="registro.html">Registrarme</a>
+        <a href="mi-cuenta.html">Mi cuenta</a>
+        <a href="ayuda-faq.html">Ayuda / FAQ</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <small>© 2026 Bitcoin Criptomoneda · Proyecto de tesis. Valores referenciales.</small>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/landing.js"></script>
+  <script src="../js/mercado.js"></script>
+</body>
+</html>

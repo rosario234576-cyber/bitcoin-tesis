@@ -4,25 +4,9 @@
    4. FAQ   5. Acceso   6. Mi cuenta   7. Responsive
    ========================================================== */
 
-/* Pagina actual en el menu */
-.desktop-nav > a[aria-current="page"],
+/* Pagina actual en el menu (la pildora activa vive en site.css) */
 .nav-dropdown.is-current > button {
   color: var(--text);
-}
-
-.desktop-nav > a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: -2px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--orange);
-}
-
-.desktop-nav > a {
-  position: relative;
 }
 
 .mobile-menu > a[aria-current="page"] {

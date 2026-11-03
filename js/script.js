@@ -29,6 +29,16 @@ if (menuToggle && mobileMenu) {
   });
 }
 
+// Header compacto al hacer scroll
+const topbar = document.querySelector(".topbar");
+
+function updateTopbar() {
+  topbar?.classList.toggle("is-scrolled", window.scrollY > 24);
+}
+
+updateTopbar();
+window.addEventListener("scroll", updateTopbar, { passive: true });
+
 const SESSION_KEY = "bitcoinTesisSession";
 const accountMenus = document.querySelectorAll(".account-menu");
 
@@ -242,8 +252,15 @@ const feeOutput = document.querySelector("#fee-output");
 const netOutput = document.querySelector("#net-output");
 const tradeMessage = document.querySelector("#trade-message");
 const tradeTabs = document.querySelectorAll(".trade-tab");
+const fiatLabel = document.querySelector("#fiat-label");
+const inputUnit = document.querySelector("#input-unit");
+const outputUnit = document.querySelector("#output-unit");
+const netLabel = document.querySelector("#net-label");
+const tradeError = document.querySelector("#trade-error");
+const tradeChips = document.querySelector("#trade-chips");
 
-let tradeMode = "buy";
+// El formulario puede arrancar en modo venta (data-mode="sell" en Vender)
+let tradeMode = tradeForm?.dataset.mode || "buy";
 const rates = {
   USD: 67450,
   ARS: 81000000,
@@ -251,6 +268,15 @@ const rates = {
 const fees = {
   buy: 0.008,
   sell: 0.006,
+};
+// Limites de la simulacion: compra en moneda fiat, venta en BTC
+const limits = {
+  buy: { USD: [10, 100000], ARS: [10000, 120000000] },
+  sell: [0.0001, 5],
+};
+const quickAmounts = {
+  buy: { USD: [50, 100, 250, 500], ARS: [50000, 100000, 250000, 500000] },
+  sell: [0.001, 0.005, 0.01, 0.05],
 };
 
 function moneyFormat(value, currency) {
@@ -261,40 +287,141 @@ function moneyFormat(value, currency) {
   }).format(value);
 }
 
+function btcFormat(value) {
+  return new Intl.NumberFormat("es-AR", { minimumFractionDigits: 8, maximumFractionDigits: 8 }).format(value);
+}
+
+// Acepta coma o punto decimal; devuelve null si esta vacio y NaN si no es un numero
+function parseAmount(raw) {
+  const clean = raw.trim().replace(/\s/g, "").replace(",", ".");
+  if (!clean) return null;
+  if (!/^\d*\.?\d*$/.test(clean) || clean === ".") return NaN;
+  return Number(clean);
+}
+
+function validateAmount(amount, currency) {
+  if (amount === null) return "Ingresá un monto para simular.";
+  if (Number.isNaN(amount)) return "Usá solo números (por ejemplo 250 o 0,005).";
+  if (amount <= 0) return "El monto tiene que ser mayor a cero.";
+
+  if (tradeMode === "buy") {
+    const [min, max] = limits.buy[currency];
+    if (amount < min) return `El mínimo de compra es ${moneyFormat(min, currency)}.`;
+    if (amount > max) return `El máximo por simulación es ${moneyFormat(max, currency)}.`;
+  } else {
+    const [min, max] = limits.sell;
+    if (amount < min) return `El mínimo de venta es ${min} BTC.`;
+    if (amount > max) return `El máximo por simulación es ${max} BTC.`;
+  }
+  return "";
+}
+
+function renderTradeChips() {
+  if (!tradeChips) return;
+  const values = tradeMode === "buy" ? quickAmounts.buy[fiatCurrency.value] : quickAmounts.sell;
+  const unit = tradeMode === "buy" ? fiatCurrency.value : "BTC";
+
+  tradeChips.innerHTML = "";
+  values.forEach((value) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.dataset.amount = String(value);
+    chip.textContent = tradeMode === "buy"
+      ? `${new Intl.NumberFormat("es-AR").format(value)} ${unit}`
+      : `${String(value).replace(".", ",")} ${unit}`;
+    chip.addEventListener("click", () => {
+      fiatInput.value = String(value).replace(".", ",");
+      updateTradeCalculator();
+    });
+    tradeChips.append(chip);
+  });
+}
+
 function updateTradeCalculator() {
   if (!fiatInput || !fiatCurrency || !btcOutput || !btcPrice || !feeOutput || !netOutput) return;
 
   const currency = fiatCurrency.value;
-  const amount = Number(fiatInput.value) || 0;
+  const amount = parseAmount(fiatInput.value);
   const fee = fees[tradeMode];
-  const netAmount = amount * (1 - fee);
-  const btcAmount = netAmount / rates[currency];
+  const error = validateAmount(amount, currency);
 
   btcPrice.textContent = moneyFormat(rates[currency], currency);
-  feeOutput.textContent = `${(fee * 100).toFixed(2)}%`;
-  netOutput.textContent = moneyFormat(netAmount, currency);
-  btcOutput.value = btcAmount.toFixed(8);
+  if (fiatLabel) fiatLabel.textContent = tradeMode === "buy" ? "Pagás" : "Vendés";
+  if (inputUnit) inputUnit.textContent = tradeMode === "buy" ? currency : "BTC";
+  if (outputUnit) outputUnit.textContent = tradeMode === "buy" ? "BTC" : currency;
+  if (netLabel) netLabel.textContent = tradeMode === "buy" ? "Monto neto invertido" : "Total a recibir";
+
+  tradeChips?.querySelectorAll("button").forEach((chip) => {
+    chip.classList.toggle("active", Number(chip.dataset.amount) === amount);
+  });
+
+  fiatInput.closest(".l-input")?.classList.toggle("is-invalid", Boolean(error));
+  fiatInput.setAttribute("aria-invalid", String(Boolean(error)));
+  if (tradeError) tradeError.textContent = error;
+
+  if (error) {
+    btcOutput.value = "—";
+    feeOutput.textContent = `${(fee * 100).toFixed(2).replace(".", ",")}%`;
+    netOutput.textContent = "—";
+    return false;
+  }
+
+  if (tradeMode === "buy") {
+    const feeAmount = amount * fee;
+    const netAmount = amount - feeAmount;
+    btcOutput.value = btcFormat(netAmount / rates[currency]);
+    feeOutput.textContent = `${(fee * 100).toFixed(2).replace(".", ",")}% · ${moneyFormat(feeAmount, currency)}`;
+    netOutput.textContent = moneyFormat(netAmount, currency);
+  } else {
+    const gross = amount * rates[currency];
+    const feeAmount = gross * fee;
+    const netAmount = gross - feeAmount;
+    btcOutput.value = moneyFormat(netAmount, currency).replace(/^[^\d-]+/, "");
+    feeOutput.textContent = `${(fee * 100).toFixed(2).replace(".", ",")}% · ${moneyFormat(feeAmount, currency)}`;
+    netOutput.textContent = moneyFormat(netAmount, currency);
+  }
+  return true;
 }
 
 if (tradeForm) {
+  renderTradeChips();
   updateTradeCalculator();
 
-  fiatInput.addEventListener("input", updateTradeCalculator);
-  fiatCurrency.addEventListener("change", updateTradeCalculator);
+  fiatInput.addEventListener("input", () => {
+    tradeMessage?.classList.remove("is-success");
+    updateTradeCalculator();
+  });
+  fiatCurrency.addEventListener("change", () => {
+    renderTradeChips();
+    updateTradeCalculator();
+  });
 
   tradeTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
+      if (tradeMode === tab.dataset.mode) return;
       tradeMode = tab.dataset.mode;
-      tradeTabs.forEach((item) => item.classList.toggle("active", item === tab));
+      tradeTabs.forEach((item) => {
+        item.classList.toggle("active", item === tab);
+        item.setAttribute("aria-pressed", String(item === tab));
+      });
+      // Al cambiar de modo se propone un monto valido para ese modo
+      fiatInput.value = tradeMode === "buy" ? String(quickAmounts.buy[fiatCurrency.value][2]) : "0,005";
+      renderTradeChips();
       updateTradeCalculator();
     });
   });
 
   tradeForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    tradeMessage.textContent = tradeMode === "buy"
-      ? "Operacion de compra simulada. En produccion se abriria el paso de confirmacion."
-      : "Operacion de venta simulada. En produccion se validaria saldo BTC disponible.";
+    if (!updateTradeCalculator()) {
+      fiatInput.focus();
+      return;
+    }
+    const summary = tradeMode === "buy"
+      ? `Simulación lista: recibirías ${btcOutput.value} BTC.`
+      : `Simulación lista: recibirías ${netOutput.textContent}.`;
+    tradeMessage.innerHTML = `<i></i> ${summary} No se realizó ninguna operación real.`;
+    tradeMessage.classList.add("is-success");
   });
 }
 
