@@ -3,162 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Que es Bitcoin | Bitcoin Tesis</title>
+  <title>Quienes somos | Bitcoin Criptomoneda</title>
+  <meta name="description" content="Que es Bitcoin, como funciona y por que importa.">
   <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <header class="topbar">
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio">
-      <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
-      <span>Bitcoin</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Menu principal">
-      <a href="quienes-somos.html">Quienes somos</a>
-      <div class="nav-dropdown">
-        <button type="button">Mercado</button>
-        <div class="nav-dropdown-menu">
-          <a href="comprar.html">Comprar</a>
-          <a href="vender.html">Vender</a>
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Bitcoin inicio">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="quienes-somos.html" aria-current="page">Quienes somos</a>
+        <div class="nav-dropdown">
+          <button type="button">Mercado <span class="chevron" aria-hidden="true"></span></button>
+          <div class="nav-dropdown-menu">
+            <a href="comprar.html"><strong>Comprar</strong><small>Adquiri BTC con USD o ARS</small></a>
+            <a href="vender.html"><strong>Vender</strong><small>Converti BTC a tu moneda</small></a>
+          </div>
         </div>
-      </div>
-      <a href="beneficios.html">Beneficios</a>
-      <a href="ayuda-faq.html">Ayuda/FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <div class="account-actions">
-      <a class="login-link" href="ingresar.html">Ingresar</a>
-      <div class="account-menu">
-        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
-          <span class="account-icon"></span>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="ayuda-faq.html">Ayuda</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="account-actions">
+        <a class="login-link" href="ingresar.html">Ingresar</a>
+        <a class="button button-primary button-sm register-link" href="registro.html">Crear cuenta</a>
+        <div class="account-menu">
+          <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
+            <span class="account-icon"></span>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="registro.html">Registrarme</a>
+            <a href="ingresar.html" data-logout>Cerrar sesion</a>
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <div class="account-dropdown">
-          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
-          <a href="mi-cuenta.html">Mi cuenta</a>
-          <a href="registro.html">Registrarme</a>
-          <a href="ingresar.html" data-logout>Cerrar sesion</a>
-        </div>
       </div>
     </div>
   </header>
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <p class="mobile-menu-label">Explorar</p>
     <a href="../index.html">Inicio</a>
-    <a href="quienes-somos.html">Quienes somos</a>
-    <a href="comprar.html">Comprar</a>
-    <a href="vender.html">Vender</a>
+    <a href="quienes-somos.html" aria-current="page">Quienes somos</a>
     <a href="beneficios.html">Beneficios</a>
-    <a href="ayuda-faq.html">Ayuda/FAQ</a>
+    <a href="ayuda-faq.html">Ayuda / FAQ</a>
     <a href="contacto.html">Contacto</a>
-    <a href="ingresar.html">Mi cuenta</a>
+    <p class="mobile-menu-label">Mercado</p>
+    <a href="comprar.html">Comprar BTC</a>
+    <a href="vender.html">Vender BTC</a>
+    <div class="mobile-menu-actions">
+      <a class="button button-outline" href="ingresar.html">Ingresar</a>
+      <a class="button button-primary" href="registro.html">Crear cuenta</a>
+    </div>
   </nav>
 
-  <main class="bitcoin-page">
-    <section class="bitcoin-hero section-pattern">
-      <div class="bitcoin-hero-copy reveal reveal-left">
-        <p class="eyebrow">Que es Bitcoin</p>
-        <h1>Dinero digital libre, escaso y abierto para todos</h1>
-        <p>Bitcoin es una red global que permite enviar y recibir valor sin bancos, sin horarios y sin fronteras. Su poder esta en una idea simple: nadie lo controla, pero cualquiera puede usarlo.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#bitcoin-historia">Entenderlo facil</a>
-          <a class="button button-outline" href="../index.html#operar">Operar BTC</a>
+  <main id="main">
+    <section class="page-hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><span aria-current="page">Quienes somos</span></li>
+          </ol>
+        <div class="page-hero-grid">
+          <div class="reveal">
+            <p class="eyebrow">Que es Bitcoin</p>
+            <h1>Dinero digital libre, escaso y <span class="text-accent">abierto para todos</span></h1>
+            <p class="lead">Bitcoin es una red global que permite enviar y recibir valor sin bancos, sin horarios y sin fronteras. Nadie lo controla, pero cualquiera puede usarlo.</p>
+            <div class="hero-actions">
+              <a class="button button-primary button-lg" href="#idea">Entenderlo facil</a>
+              <a class="button button-ghost button-lg" href="../index.html#operar">Operar BTC <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <div class="hero-figure reveal" aria-hidden="true">
+            <img src="../assets/IconoNuevosWeb/IconoHome.png" alt="">
+            <span class="float-chip top"><img src="../assets/IconoNuevosWeb/IconoMoneda.png" alt=""> Emision limitada</span>
+            <span class="float-chip bottom"><img src="../assets/IconoNuevosWeb/IconoEscudo2.png" alt=""> Red segura</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="bitcoin-orbit reveal reveal-right" aria-hidden="true">
-        <img class="bitcoin-core" src="../assets/IconoNuevosWeb/IconoHome.png" alt="">
-        <span class="orbit-dot dot-one"><img src="../assets/IconoNuevosWeb/IconoMoneda.png" alt=""></span>
-        <span class="orbit-dot dot-two"><img src="../assets/IconoNuevosWeb/IconoBilletera.png" alt=""></span>
-        <span class="orbit-dot dot-three"><img src="../assets/IconoNuevosWeb/IconoEscudo2.png" alt=""></span>
+    <section class="section" id="idea">
+      <div class="container">
+        <header class="section-head section-head-center reveal">
+          <p class="eyebrow"><span>01</span> La idea central</p>
+          <h2>Bitcoin funciona como una red, no como una empresa</h2>
+          <p class="section-lead">Cada transaccion se comparte entre miles de computadoras que verifican, ordenan y protegen el historial.</p>
+        </header>
+        <div class="feature-grid cols-3">
+          <article class="feature-card card reveal">
+            <img src="../assets/IconoNuevosWeb/IconoMoneda.png" alt="">
+            <h3>Escasez</h3>
+            <p>Bitcoin tiene emision limitada. Esa escasez digital es una de las razones por las que muchas personas lo usan como reserva de valor.</p>
+          </article>
+          <article class="feature-card card reveal">
+            <img src="../assets/IconoNuevosWeb/IconoBilletera.png" alt="">
+            <h3>Propiedad</h3>
+            <p>Una wallet guarda tus claves. Con esas claves podes recibir, enviar y custodiar BTC desde cualquier lugar.</p>
+          </article>
+          <article class="feature-card card reveal">
+            <img src="../assets/IconoNuevosWeb/IconoEscudo2.png" alt="">
+            <h3>Seguridad</h3>
+            <p>La red se protege con criptografia, consenso y energia computacional distribuida en todo el mundo.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="bitcoin-story" id="bitcoin-historia">
-      <div class="section-heading reveal">
-        <p class="eyebrow">La idea central</p>
-        <h2>Bitcoin funciona como una red, no como una empresa</h2>
-        <p>Cada transaccion se comparte entre miles de computadoras. La red verifica, ordena y protege el historial para que el dinero no dependa de una autoridad central.</p>
-      </div>
-
-      <div class="symbol-grid">
-        <article class="symbol-card reveal" data-number="01">
-          <img src="../assets/IconoNuevosWeb/IconoMoneda.png" alt="">
-          <h3>Escasez</h3>
-          <p>Bitcoin tiene emision limitada. Esa escasez digital es una de las razones por las que muchas personas lo usan como reserva de valor.</p>
-        </article>
-        <article class="symbol-card reveal" data-number="02">
-          <img src="../assets/IconoNuevosWeb/IconoBilletera.png" alt="">
-          <h3>Propiedad</h3>
-          <p>Una wallet guarda tus claves. Con esas claves podes recibir, enviar y custodiar BTC desde cualquier lugar.</p>
-        </article>
-        <article class="symbol-card reveal" data-number="03">
-          <img src="../assets/IconoNuevosWeb/IconoEscudo2.png" alt="">
-          <h3>Seguridad</h3>
-          <p>La red se protege con criptografia, consenso y energia computacional distribuida en todo el mundo.</p>
-        </article>
+    <section class="section section-alt">
+      <div class="container split">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>02</span> Como se mueve el valor</p>
+          <h2>De una persona a otra, sin pedir permiso</h2>
+          <p class="section-lead">Cuando envias Bitcoin, la red revisa que tengas saldo, registra la operacion y la suma a una cadena de bloques publica.</p>
+        </header>
+        <div class="reveal">
+            <ol class="steps">
+              <li><strong>Creas una wallet</strong><span>La wallet genera claves para controlar tus fondos.</span></li>
+              <li><strong>Envias BTC</strong><span>La transaccion viaja a la red y espera confirmacion.</span></li>
+              <li><strong>La red valida</strong><span>Los nodos comprueban reglas y evitan duplicaciones.</span></li>
+              <li><strong>Queda registrado</strong><span>El bloque se suma al historial publico de Bitcoin.</span></li>
+            </ol>
+        </div>
       </div>
     </section>
 
-    <section class="bitcoin-flow section-pattern">
-      <div class="flow-copy reveal reveal-left">
-        <p class="eyebrow">Como se mueve el valor</p>
-        <h2>De una persona a otra, sin pedir permiso</h2>
-        <p>Cuando envias Bitcoin, la red revisa que tengas saldo, registra la operacion y la vuelve parte de una cadena de bloques publica. Es transparente, verificable y resistente.</p>
-      </div>
-
-      <div class="flow-steps">
-        <article class="flow-step reveal">
-          <span>01</span>
-          <h3>Creas una wallet</h3>
-          <p>La wallet genera claves para controlar tus fondos.</p>
-        </article>
-        <article class="flow-step reveal">
-          <span>02</span>
-          <h3>Envias BTC</h3>
-          <p>La transaccion viaja a la red y espera confirmacion.</p>
-        </article>
-        <article class="flow-step reveal">
-          <span>03</span>
-          <h3>La red valida</h3>
-          <p>Los nodos comprueban reglas y evitan duplicaciones.</p>
-        </article>
-        <article class="flow-step reveal">
-          <span>04</span>
-          <h3>Queda registrado</h3>
-          <p>El bloque se suma al historial publico de Bitcoin.</p>
-        </article>
+    <section class="section">
+      <div class="container split">
+        <div class="media-panel reveal" aria-hidden="true">
+          <img src="../assets/IconoNuevosWeb/IconoHome.png" alt="">
+        </div>
+        <div class="reveal">
+          <header class="section-head">
+            <p class="eyebrow"><span>03</span> Por que importa</p>
+            <h2>Bitcoin simboliza independencia financiera</h2>
+            <p class="section-lead">Es una forma de mover valor con reglas transparentes, oferta limitada y acceso global. Para algunos es ahorro; para otros, libertad economica.</p>
+          </header>
+          <ul class="check-list">
+            <li>Funciona todos los dias, a toda hora.</li>
+            <li>Puede verificarse publicamente.</li>
+            <li>No depende de una sola institucion.</li>
+            <li>Permite aprender, ahorrar, comprar y vender BTC.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="bitcoin-meaning">
-      <div class="meaning-visual reveal reveal-left" aria-hidden="true">
-        <img src="../assets/IconoNuevosWeb/IconoHome.png" alt="">
-      </div>
-      <div class="meaning-copy reveal reveal-right">
-        <p class="eyebrow">Por que importa</p>
-        <h2>Bitcoin simboliza independencia financiera</h2>
-        <p>No es solo una moneda digital. Es una forma de mover valor con reglas transparentes, oferta limitada y acceso global. Para algunos es ahorro; para otros, una herramienta de libertad economica.</p>
-        <ul class="meaning-list">
-          <li>Funciona todos los dias, a toda hora.</li>
-          <li>Puede verificarse publicamente.</li>
-          <li>No depende de una sola institucion.</li>
-          <li>Permite aprender, ahorrar, comprar y vender BTC.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="bitcoin-cta section-pattern">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Empeza simple</p>
-        <h2>Aprende Bitcoin operando con una interfaz clara</h2>
-        <p>Consulta el mercado, simula una compra y explora los beneficios antes de dar el siguiente paso.</p>
-        <a class="button button-primary" href="../index.html#operar">Ir a comprar/vender</a>
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Empeza simple</h2>
+            <p>Consulta el mercado, simula una compra y explora los beneficios antes de dar el siguiente paso.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-dark button-lg" href="../index.html#operar">Ir a operar</a>
+            <a class="button button-on-accent button-lg" href="beneficios.html">Ver beneficios</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+        <p>Interfaz referencial para comprar, vender y aprender sobre Bitcoin.</p>
+      </div>
+      <nav aria-label="Mercado">
+        <h4>Mercado</h4>
+        <a href="comprar.html">Comprar</a>
+        <a href="vender.html">Vender</a>
+        <a href="../index.html#mercado">Cotizacion</a>
+      </nav>
+      <nav aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="quienes-somos.html">Quienes somos</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <nav aria-label="Cuenta">
+        <h4>Cuenta</h4>
+        <a href="ingresar.html">Ingresar</a>
+        <a href="registro.html">Registrarme</a>
+        <a href="mi-cuenta.html">Mi cuenta</a>
+        <a href="ayuda-faq.html">Ayuda / FAQ</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <small>© 2026 Bitcoin Criptomoneda · Proyecto de tesis. Valores referenciales.</small>
+    </div>
+  </footer>
 
   <script src="../js/script.js"></script>
 </body>

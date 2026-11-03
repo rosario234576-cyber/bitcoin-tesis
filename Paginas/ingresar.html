@@ -3,120 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ingresar | Bitcoin Tesis</title>
+  <title>Ingresar | Bitcoin Criptomoneda</title>
+  <meta name="description" content="Inicia sesion para operar Bitcoin.">
   <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <header class="topbar">
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio">
-      <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
-      <span>Bitcoin</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Menu principal">
-      <a href="quienes-somos.html">Quienes somos</a>
-      <div class="nav-dropdown">
-        <button type="button">Mercado</button>
-        <div class="nav-dropdown-menu">
-          <a href="comprar.html">Comprar</a>
-          <a href="vender.html">Vender</a>
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Bitcoin inicio">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="quienes-somos.html">Quienes somos</a>
+        <div class="nav-dropdown">
+          <button type="button">Mercado <span class="chevron" aria-hidden="true"></span></button>
+          <div class="nav-dropdown-menu">
+            <a href="comprar.html"><strong>Comprar</strong><small>Adquiri BTC con USD o ARS</small></a>
+            <a href="vender.html"><strong>Vender</strong><small>Converti BTC a tu moneda</small></a>
+          </div>
         </div>
-      </div>
-      <a href="beneficios.html">Beneficios</a>
-      <a href="ayuda-faq.html">Ayuda/FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <div class="account-actions">
-      <a class="login-link" href="ingresar.html">Ingresar</a>
-      <div class="account-menu">
-        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
-          <span class="account-icon"></span>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="ayuda-faq.html">Ayuda</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="account-actions">
+        <a class="login-link" href="ingresar.html">Ingresar</a>
+        <a class="button button-primary button-sm register-link" href="registro.html">Crear cuenta</a>
+        <div class="account-menu">
+          <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
+            <span class="account-icon"></span>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="registro.html">Registrarme</a>
+            <a href="ingresar.html" data-logout>Cerrar sesion</a>
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <div class="account-dropdown">
-          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
-          <a href="mi-cuenta.html">Mi cuenta</a>
-          <a href="registro.html">Registrarme</a>
-          <a href="ingresar.html" data-logout>Cerrar sesion</a>
-        </div>
       </div>
     </div>
   </header>
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <p class="mobile-menu-label">Explorar</p>
     <a href="../index.html">Inicio</a>
     <a href="quienes-somos.html">Quienes somos</a>
-    <a href="comprar.html">Comprar</a>
-    <a href="vender.html">Vender</a>
     <a href="beneficios.html">Beneficios</a>
-    <a href="ayuda-faq.html">Ayuda/FAQ</a>
+    <a href="ayuda-faq.html">Ayuda / FAQ</a>
     <a href="contacto.html">Contacto</a>
-    <a href="ingresar.html">Mi cuenta</a>
-  </nav> 
+    <p class="mobile-menu-label">Mercado</p>
+    <a href="comprar.html">Comprar BTC</a>
+    <a href="vender.html">Vender BTC</a>
+    <div class="mobile-menu-actions">
+      <a class="button button-outline" href="ingresar.html">Ingresar</a>
+      <a class="button button-primary" href="registro.html">Crear cuenta</a>
+    </div>
+  </nav>
 
-  <main class="login-main section-pattern">
-    <section class="login-shell">
-      <div class="login-intro reveal">
-        <p class="eyebrow">Acceso seguro 24/7</p>
-        <h1>Inicia sesión y opera Bitcoin al instante</h1>
-        <p>Consulta tus saldos, revisa alertas de precio y continua tus operaciones de compra o venta desde un panel preparado para usuarios activos.</p>
-        <div class="login-stats" aria-label="Resumen de cuenta">
-          <article>
-            <span>BTC/USD</span>
-            <strong>67.450</strong>
-          </article>
-          <article>
-            <span>Estado</span>
-            <strong>Seguro</strong>
-          </article>
-          <article>
-            <span>Operacion</span>
-            <strong>24/7</strong>
-          </article>
-        </div>
-      </div>
-
-      <form class="login-card reveal" id="login-form">
-        <div class="login-card-header">
-          <img src="../assets/Logo/IsoBlanco.png" alt="">
-          <div>
-            <p class="eyebrow">Ingresar</p>
-            <h2>Bienvenido</h2>
-          </div>
+  <main id="main">
+    <section class="auth">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container auth-grid">
+        <div class="reveal">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><span aria-current="page">Ingresar</span></li>
+          </ol>
+          <p class="eyebrow">Acceso seguro 24/7</p>
+          <h1>Inicia sesion y <span class="text-accent">opera al instante</span></h1>
+          <p class="lead">Consulta tus saldos, revisa alertas de precio y continua tus operaciones desde un panel preparado para usuarios activos.</p>
+          <dl class="hero-proof">
+            <div><dt>BTC / USD</dt><dd>67.450</dd></div>
+            <div><dt>Estado</dt><dd>Seguro</dd></div>
+            <div><dt>Operacion</dt><dd>24/7</dd></div>
+          </dl>
         </div>
 
-        <label class="field">
-          <span>Email o telefono</span>
-          <input type="text" name="user" autocomplete="username" placeholder="tuemail@mail.com" required>
-        </label>
-
-        <label class="field">
-          <span>Contrasena</span>
-          <div class="password-field">
-            <input id="login-password" type="password" name="password" autocomplete="current-password" placeholder="Ingresa tu contrasena" required>
-            <button class="password-toggle" type="button" aria-controls="login-password" aria-label="Mostrar contrasena">Ver</button>
+        <form class="form-card card reveal" id="login-form">
+          <div class="form-card-head">
+            <img src="../assets/Logo/IsoBlanco.png" alt="">
+            <div>
+              <h2>Bienvenido</h2>
+              <p>Ingresa a tu cuenta</p>
+            </div>
           </div>
-        </label>
-
-        <div class="login-options">
-          <label class="check-row">
-            <input type="checkbox" checked>
-            <span>Recordarme</span>
+          <label class="field">
+            <span>Email o telefono</span>
+            <input type="text" name="user" autocomplete="username" placeholder="tuemail@mail.com" required>
           </label>
-          <a href="ayuda-faq.html">Olvide mi contrasena</a>
-        </div>
-
-        <button class="button button-primary full-button" type="submit">Ingresar a mi cuenta</button>
-        <button class="button button-outline full-button" type="button">Entrar en modo demo</button>
-
-        <p class="login-message" id="login-message" aria-live="polite">Tus datos estan protegidos con validacion segura.</p>
-        <p class="signup-link">No tenes cuenta?</p>
-        <a class="button button-outline full-button" href="registro.html">Registrarme</a>
-      </form>
+          <label class="field">
+            <span>Contraseña</span>
+            <div class="password-field">
+              <input id="login-password" type="password" name="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" required>
+              <button class="password-toggle" type="button" aria-controls="login-password" aria-label="Mostrar contrasena">Ver</button>
+            </div>
+          </label>
+          <div class="form-row">
+            <label class="check-row"><input type="checkbox" checked><span>Recordarme</span></label>
+            <a href="ayuda-faq.html">Olvide mi contraseña</a>
+          </div>
+          <button class="button button-primary button-lg full-button" type="submit">Ingresar a mi cuenta</button>
+          <button class="button button-outline full-button" type="button">Entrar en modo demo</button>
+          <p class="form-message" id="login-message" aria-live="polite">Tus datos estan protegidos con validacion segura.</p>
+          <p class="divider">o</p>
+          <p class="form-footer">No tenes cuenta? <a href="registro.html">Crear cuenta</a></p>
+        </form>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+        <p>Interfaz referencial para comprar, vender y aprender sobre Bitcoin.</p>
+      </div>
+      <nav aria-label="Mercado">
+        <h4>Mercado</h4>
+        <a href="comprar.html">Comprar</a>
+        <a href="vender.html">Vender</a>
+        <a href="../index.html#mercado">Cotizacion</a>
+      </nav>
+      <nav aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="quienes-somos.html">Quienes somos</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <nav aria-label="Cuenta">
+        <h4>Cuenta</h4>
+        <a href="ingresar.html">Ingresar</a>
+        <a href="registro.html">Registrarme</a>
+        <a href="mi-cuenta.html">Mi cuenta</a>
+        <a href="ayuda-faq.html">Ayuda / FAQ</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <small>© 2026 Bitcoin Criptomoneda · Proyecto de tesis. Valores referenciales.</small>
+    </div>
+  </footer>
 
   <script src="../js/script.js"></script>
 </body>

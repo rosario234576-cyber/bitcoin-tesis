@@ -3,156 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ayuda FAQ | Bitcoin Tesis</title>
+  <title>Ayuda / FAQ | Bitcoin Criptomoneda</title>
+  <meta name="description" content="Preguntas frecuentes sobre cuenta, operaciones, seguridad y soporte.">
   <link rel="icon" type="image/png" href="../assets/Logo/IsoBlanco.png">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <header class="topbar">
-    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a class="brand" href="../index.html" aria-label="Bitcoin Tesis inicio">
-      <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
-      <span>Bitcoin</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Menu principal">
-      <a href="quienes-somos.html">Quienes somos</a>
-      <div class="nav-dropdown">
-        <button type="button">Mercado</button>
-        <div class="nav-dropdown-menu">
-          <a href="comprar.html">Comprar</a>
-          <a href="vender.html">Vender</a>
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html" aria-label="Bitcoin inicio">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="quienes-somos.html">Quienes somos</a>
+        <div class="nav-dropdown">
+          <button type="button">Mercado <span class="chevron" aria-hidden="true"></span></button>
+          <div class="nav-dropdown-menu">
+            <a href="comprar.html"><strong>Comprar</strong><small>Adquiri BTC con USD o ARS</small></a>
+            <a href="vender.html"><strong>Vender</strong><small>Converti BTC a tu moneda</small></a>
+          </div>
         </div>
-      </div>
-      <a href="beneficios.html">Beneficios</a>
-      <a href="ayuda-faq.html">Ayuda/FAQ</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <div class="account-actions">
-      <a class="login-link" href="ingresar.html">Ingresar</a>
-      <div class="account-menu">
-        <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
-          <span class="account-icon"></span>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="ayuda-faq.html" aria-current="page">Ayuda</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="account-actions">
+        <a class="login-link" href="ingresar.html">Ingresar</a>
+        <a class="button button-primary button-sm register-link" href="registro.html">Crear cuenta</a>
+        <div class="account-menu">
+          <button class="account-icon-link" type="button" aria-label="Abrir menu de cuenta" aria-expanded="false">
+            <span class="account-icon"></span>
+          </button>
+          <div class="account-dropdown">
+            <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
+            <a href="mi-cuenta.html">Mi cuenta</a>
+            <a href="registro.html">Registrarme</a>
+            <a href="ingresar.html" data-logout>Cerrar sesion</a>
+          </div>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-        <div class="account-dropdown">
-          <div class="account-dropdown-title"><span class="account-icon"></span><strong data-session-greeting>Hola!</strong></div>
-          <a href="mi-cuenta.html">Mi cuenta</a>
-          <a href="registro.html">Registrarme</a>
-          <a href="ingresar.html" data-logout>Cerrar sesion</a>
-        </div>
       </div>
     </div>
   </header>
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+    <p class="mobile-menu-label">Explorar</p>
     <a href="../index.html">Inicio</a>
     <a href="quienes-somos.html">Quienes somos</a>
-    <a href="comprar.html">Comprar</a>
-    <a href="vender.html">Vender</a>
     <a href="beneficios.html">Beneficios</a>
-    <a href="ayuda-faq.html">Ayuda/FAQ</a>
+    <a href="ayuda-faq.html" aria-current="page">Ayuda / FAQ</a>
     <a href="contacto.html">Contacto</a>
-    <a href="ingresar.html">Mi cuenta</a>
+    <p class="mobile-menu-label">Mercado</p>
+    <a href="comprar.html">Comprar BTC</a>
+    <a href="vender.html">Vender BTC</a>
+    <div class="mobile-menu-actions">
+      <a class="button button-outline" href="ingresar.html">Ingresar</a>
+      <a class="button button-primary" href="registro.html">Crear cuenta</a>
+    </div>
   </nav>
 
-  <main class="faq-page">
-    <section class="faq-hero section-pattern">
-      <div class="faq-hero-copy reveal reveal-left">
-        <p class="eyebrow">Ayuda / FAQ</p>
-        <h1>Preguntas frecuentes</h1>
-        <p>Respuestas simples para registrarte, comprar Bitcoin, vender, cuidar tu cuenta y entender los movimientos de tu wallet.</p>
-      </div>
-      <div class="faq-hero-visual reveal reveal-right" aria-hidden="true">
-        <img src="../assets/IconoNuevosWeb/IconoEscudo.png" alt="">
-        <span>?</span>
-      </div>
-    </section>
-
-    <section class="faq-tools">
-      <div class="faq-search reveal">
-        <label for="faq-search-input">Buscar una duda</label>
-        <input id="faq-search-input" type="search" placeholder="Ej: comprar, contraseña, retiro, seguridad">
-      </div>
-
-      <div class="faq-categories reveal" aria-label="Categorias de preguntas">
-        <button class="faq-filter active" type="button" data-filter="all">Todas</button>
-        <button class="faq-filter" type="button" data-filter="cuenta">Cuenta</button>
-        <button class="faq-filter" type="button" data-filter="operaciones">Operaciones</button>
-        <button class="faq-filter" type="button" data-filter="seguridad">Seguridad</button>
-        <button class="faq-filter" type="button" data-filter="soporte">Soporte</button>
+  <main id="main">
+    <section class="page-hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><span aria-current="page">Ayuda / FAQ</span></li>
+          </ol>
+        <div class="page-hero-grid is-single reveal">
+          <div>
+            <p class="eyebrow">Centro de ayuda</p>
+            <h1>Preguntas frecuentes</h1>
+            <p class="lead">Respuestas simples para registrarte, comprar, vender, cuidar tu cuenta y entender tu wallet.</p>
+            <div class="search-field">
+              <label class="is-hidden" for="faq-search-input">Buscar una duda</label>
+              <input id="faq-search-input" type="search" placeholder="Busca: comprar, contraseña, retiro, seguridad...">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="faq-content">
-      <div class="faq-accordion reveal">
-        <article class="faq-row" data-category="cuenta">
-          <button type="button">
-            <span>Como creo una cuenta?</span>
-            <i></i>
-          </button>
-          <p>Ingresa desde el boton Ingresar, completa tus datos y valida tu email o telefono. Luego vas a poder acceder al panel de compra y venta.</p>
-        </article>
-        <article class="faq-row" data-category="operaciones">
-          <button type="button">
-            <span>Como compro Bitcoin?</span>
-            <i></i>
-          </button>
-          <p>Elegis Comprar, ingresas el monto en USD o ARS, revisas la cotizacion estimada y confirmas la operacion cuando estes de acuerdo.</p>
-        </article>
-        <article class="faq-row" data-category="operaciones">
-          <button type="button">
-            <span>Puedo vender BTC y retirar fondos?</span>
-            <i></i>
-          </button>
-          <p>Si. El flujo contempla venta de BTC, saldo disponible y retiro hacia una cuenta verificada. La disponibilidad puede depender de la validacion de tu cuenta.</p>
-        </article>
-        <article class="faq-row" data-category="seguridad">
-          <button type="button">
-            <span>Como protejo mi cuenta?</span>
-            <i></i>
-          </button>
-          <p>Usa una contraseña fuerte, no compartas codigos, activa una segunda validacion cuando este disponible y revisa siempre que estes en el sitio correcto.</p>
-        </article>
-        <article class="faq-row" data-category="operaciones">
-          <button type="button">
-            <span>La cotizacion es en tiempo real?</span>
-            <i></i>
-          </button>
-          <p>La interfaz actual usa valores referenciales para maqueta. Queda preparada para conectarse a una API de mercado y actualizar precios en vivo.</p>
-        </article>
-        <article class="faq-row" data-category="seguridad">
-          <button type="button">
-            <span>Que pasa si pierdo mi contraseña?</span>
-            <i></i>
-          </button>
-          <p>Podes iniciar el proceso de recuperacion desde la pantalla de ingreso. Por seguridad, se validara tu identidad antes de restablecer el acceso.</p>
-        </article>
-        <article class="faq-row" data-category="cuenta">
-          <button type="button">
-            <span>Necesito saber de Bitcoin para empezar?</span>
-            <i></i>
-          </button>
-          <p>No. La plataforma esta pensada para mostrar montos, comisiones, saldos y pasos de forma clara antes de confirmar cualquier accion.</p>
-        </article>
-        <article class="faq-row" data-category="soporte">
-          <button type="button">
-            <span>Como contacto soporte?</span>
-            <i></i>
-          </button>
-          <p>Podes usar la pagina de contacto para sumar WhatsApp, email, redes o un formulario de atencion. Este bloque queda listo para datos reales.</p>
-        </article>
-      </div>
+    <section class="section">
+      <div class="container faq-layout">
+        <div class="reveal">
+          <div class="faq-categories" aria-label="Categorias de preguntas">
+            <button class="faq-filter active" type="button" data-filter="all">Todas</button>
+            <button class="faq-filter" type="button" data-filter="cuenta">Cuenta</button>
+            <button class="faq-filter" type="button" data-filter="operaciones">Operaciones</button>
+            <button class="faq-filter" type="button" data-filter="seguridad">Seguridad</button>
+            <button class="faq-filter" type="button" data-filter="soporte">Soporte</button>
+          </div>
+          <div class="faq-accordion">
+            <article class="faq-row" data-category="cuenta">
+              <button type="button"><span>Como creo una cuenta?</span><i aria-hidden="true"></i></button>
+              <p>Entra a Crear cuenta, completa tus datos y valida tu email o telefono. Luego vas a poder acceder al panel de compra y venta.</p>
+            </article>
+            <article class="faq-row" data-category="operaciones">
+              <button type="button"><span>Como compro Bitcoin?</span><i aria-hidden="true"></i></button>
+              <p>Elegis Comprar, ingresas el monto en USD o ARS, revisas la cotizacion estimada y confirmas la operacion cuando estes de acuerdo.</p>
+            </article>
+            <article class="faq-row" data-category="operaciones">
+              <button type="button"><span>Puedo vender BTC y retirar fondos?</span><i aria-hidden="true"></i></button>
+              <p>Si. El flujo contempla venta de BTC, saldo disponible y retiro hacia una cuenta verificada. La disponibilidad puede depender de la validacion de tu cuenta.</p>
+            </article>
+            <article class="faq-row" data-category="seguridad">
+              <button type="button"><span>Como protejo mi cuenta?</span><i aria-hidden="true"></i></button>
+              <p>Usa una contraseña fuerte, no compartas codigos, activa una segunda validacion cuando este disponible y revisa siempre que estes en el sitio correcto.</p>
+            </article>
+            <article class="faq-row" data-category="operaciones">
+              <button type="button"><span>La cotizacion es en tiempo real?</span><i aria-hidden="true"></i></button>
+              <p>La interfaz actual usa valores referenciales para maqueta. Queda preparada para conectarse a una API de mercado y actualizar precios en vivo.</p>
+            </article>
+            <article class="faq-row" data-category="seguridad">
+              <button type="button"><span>Que pasa si pierdo mi contraseña?</span><i aria-hidden="true"></i></button>
+              <p>Podes iniciar el proceso de recuperacion desde la pantalla de ingreso. Por seguridad, se validara tu identidad antes de restablecer el acceso.</p>
+            </article>
+            <article class="faq-row" data-category="cuenta">
+              <button type="button"><span>Necesito saber de Bitcoin para empezar?</span><i aria-hidden="true"></i></button>
+              <p>No. La plataforma muestra montos, comisiones, saldos y pasos de forma clara antes de confirmar cualquier accion.</p>
+            </article>
+            <article class="faq-row" data-category="soporte">
+              <button type="button"><span>Como contacto soporte?</span><i aria-hidden="true"></i></button>
+              <p>Desde la pagina de contacto podes enviarnos tu consulta por formulario. Te respondemos con una guia clara.</p>
+            </article>
+            <p class="faq-empty">No encontramos preguntas con esa busqueda. Proba con otra palabra o escribinos.</p>
+          </div>
+        </div>
 
-      <aside class="faq-support reveal reveal-right">
-        <img src="../assets/IconoNuevosWeb/IconoBilletera.png" alt="">
-        <p class="eyebrow">Soporte guiado</p>
-        <h2>No encontraste tu respuesta?</h2>
-        <p>Dejanos tu consulta y te ayudamos con registro, seguridad, transferencias o dudas sobre compra y venta de Bitcoin.</p>
-        <a class="button button-primary" href="contacto.html">Contactar soporte</a>
-      </aside>
+        <aside class="support-card card reveal">
+          <img src="../assets/IconoNuevosWeb/IconoBilletera.png" alt="">
+          <p class="eyebrow">Soporte guiado</p>
+          <h2>No encontraste tu respuesta?</h2>
+          <p>Te ayudamos con registro, seguridad, transferencias o dudas sobre compra y venta de Bitcoin.</p>
+          <a class="button button-primary" href="contacto.html">Contactar soporte</a>
+        </aside>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/Logo/LogoBlanco.png" alt="Bitcoin">
+        <p>Interfaz referencial para comprar, vender y aprender sobre Bitcoin.</p>
+      </div>
+      <nav aria-label="Mercado">
+        <h4>Mercado</h4>
+        <a href="comprar.html">Comprar</a>
+        <a href="vender.html">Vender</a>
+        <a href="../index.html#mercado">Cotizacion</a>
+      </nav>
+      <nav aria-label="Empresa">
+        <h4>Empresa</h4>
+        <a href="quienes-somos.html">Quienes somos</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <nav aria-label="Cuenta">
+        <h4>Cuenta</h4>
+        <a href="ingresar.html">Ingresar</a>
+        <a href="registro.html">Registrarme</a>
+        <a href="mi-cuenta.html">Mi cuenta</a>
+        <a href="ayuda-faq.html">Ayuda / FAQ</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <small>© 2026 Bitcoin Criptomoneda · Proyecto de tesis. Valores referenciales.</small>
+    </div>
+  </footer>
 
   <script src="../js/script.js"></script>
 </body>
